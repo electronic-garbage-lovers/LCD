@@ -1,0 +1,9 @@
+.\objects\cog_c177mvhg_03.o: USER_DRV\COG_C177MVHG_03.C
+.\objects\cog_c177mvhg_03.o: USER_DRV\COG_C177MVHG_03.H
+.\objects\cog_c177mvhg_03.o: .\CMSIS\stm32f10x.h
+.\objects\cog_c177mvhg_03.o: .\CMSIS\core_cm3.h
+.\objects\cog_c177mvhg_03.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
+.\objects\cog_c177mvhg_03.o: .\CMSIS\system_stm32f10x.h
+.\objects\cog_c177mvhg_03.o: USER_DRV\delay.h
+.\objects\cog_c177mvhg_03.o: USER_DRV\ASCII_FONT_V8x8.h
+.\objects\cog_c177mvhg_03.o: USER_DRV\ASCII_FONT_V8X16.h

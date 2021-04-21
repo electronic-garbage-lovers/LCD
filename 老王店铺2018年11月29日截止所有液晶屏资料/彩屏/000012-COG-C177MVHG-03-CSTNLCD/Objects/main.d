@@ -1,0 +1,13 @@
+.\objects\main.o: USER_CODE\main.c
+.\objects\main.o: .\CMSIS\stm32f10x.h
+.\objects\main.o: .\CMSIS\core_cm3.h
+.\objects\main.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
+.\objects\main.o: .\CMSIS\system_stm32f10x.h
+.\objects\main.o: .\USER_DRV\Stm32f10xGpioInit.h
+.\objects\main.o: .\USER_DRV\delay.h
+.\objects\main.o: .\USER_DRV\gImage_test.h
+.\objects\main.o: .\USER_DRV\ASCII_FONT_V8x8.h
+.\objects\main.o: .\USER_DRV\ASCII_FONT_V8X16.h
+.\objects\main.o: .\USER_DRV\stm32f10x_AFIO.H
+.\objects\main.o: .\USER_DRV\COG_C177MVHG_03.H
+.\objects\main.o: .\USER_DRV\LED0.H

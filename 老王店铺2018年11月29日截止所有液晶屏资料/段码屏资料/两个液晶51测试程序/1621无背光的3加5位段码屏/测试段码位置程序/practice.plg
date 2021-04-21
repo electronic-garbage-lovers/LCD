@@ -1,0 +1,29 @@
+<html>
+<body>
+<pre>
+<h1>礦ision2 Build Log</h1>
+<h2>Project:</h2>
+C:\Documents and Settings\Administrator\桌面\162老王段码屏\1621无背光\测试段码位置程序\practice.uv2
+Project File Date:  01/22/2013
+
+<h2>Output:</h2>
+Build target 'Target 1'
+compiling test.c...
+linking...
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_PRINT?TEST
+Program Size: data=9.1 xdata=0 code=405
+creating hex file from "practice"...
+"practice" - 0 Error(s), 1 Warning(s).
+Build target 'Target 1'
+compiling test.c...
+TEST.C(110): error C141: syntax error near '}'
+Target not created
+Build target 'Target 1'
+compiling test.c...
+linking...
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_PRINT?TEST
+Program Size: data=9.1 xdata=0 code=405
+creating hex file from "practice"...
+"practice" - 0 Error(s), 1 Warning(s).

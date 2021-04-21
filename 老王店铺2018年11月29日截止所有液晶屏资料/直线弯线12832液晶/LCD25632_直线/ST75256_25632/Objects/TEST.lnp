@@ -1,0 +1,5 @@
+".\Objects\STARTUP.obj",
+".\Objects\SPI_ST75256.obj",
+".\Objects\main.obj" 
+TO ".\Objects\TEST" 
+PRINT(".\Listings\TEST.m51") RAMSIZE(256) 

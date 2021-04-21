@@ -1,0 +1,390 @@
+BL51 BANKED LINKER/LOCATER V6.22                                                        09/25/2018  15:55:22  PAGE 1
+
+
+BL51 BANKED LINKER/LOCATER V6.22, INVOKED BY:
+D:\KEIL_V5\C51\BIN\BL51.EXE .\Objects\STARTUP.obj, .\Objects\SPI_ST75256.obj, .\Objects\main.obj TO .\Objects\TEST PRINT
+>>  (.\Listings\TEST.m51) RAMSIZE (256)
+
+
+MEMORY MODEL: SMALL
+
+
+INPUT MODULES INCLUDED:
+  .\Objects\STARTUP.obj (?C_STARTUP)
+  .\Objects\SPI_ST75256.obj (SPI_ST75256)
+  .\Objects\main.obj (MAIN)
+  D:\KEIL_V5\C51\LIB\C51S.LIB (?C?CLDOPTR)
+  D:\KEIL_V5\C51\LIB\C51S.LIB (STRLEN)
+  D:\KEIL_V5\C51\LIB\C51S.LIB (?C?CLDPTR)
+
+
+LINK MAP OF MODULE:  .\Objects\TEST (?C_STARTUP)
+
+
+            TYPE    BASE      LENGTH    RELOCATION   SEGMENT NAME
+            -----------------------------------------------------
+
+            * * * * * * *   D A T A   M E M O R Y   * * * * * * *
+            REG     0000H     0008H     ABSOLUTE     "REG BANK 0"
+            DATA    0008H     000BH     UNIT         _DATA_GROUP_
+                    0013H     000DH                  *** GAP ***
+            BIT     0020H.0   0000H.1   UNIT         _BIT_GROUP_
+                    0020H.1   0000H.7                *** GAP ***
+            IDATA   0021H     0001H     UNIT         ?STACK
+
+            * * * * * * *   C O D E   M E M O R Y   * * * * * * *
+            CODE    0000H     0003H     ABSOLUTE     
+            CODE    0003H     0228H     UNIT         ?CO?SPI_ST75256
+            CODE    022BH     012BH     UNIT         ?PR?ST75256_INIT?SPI_ST75256
+            CODE    0356H     0053H     UNIT         ?PR?_ST75256_SHOWSTRING?SPI_ST75256
+            CODE    03A9H     0052H     UNIT         ?CO?MAIN
+            CODE    03FBH     0046H     UNIT         ?C?LIB_CODE
+            CODE    0441H     003FH     UNIT         ?PR?_ST75256_SET_POS?SPI_ST75256
+            CODE    0480H     0038H     UNIT         ?PR?_ST75256_SHOWCHAR_6X8?SPI_ST75256
+            CODE    04B8H     002BH     UNIT         ?PR?MAIN?MAIN
+            CODE    04E3H     0021H     UNIT         ?PR?_DELAY_MS?SPI_ST75256
+            CODE    0504H     001FH     UNIT         ?PR?ST75256_CLEAR?SPI_ST75256
+            CODE    0523H     001EH     UNIT         ?PR?SPI_SENDBYTE?SPI_ST75256
+            CODE    0541H     0015H     UNIT         ?PR?_STRLEN?STRLEN
+            CODE    0556H     000CH     UNIT         ?C_C51STARTUP
+
+
+
+OVERLAY MAP OF MODULE:   .\Objects\TEST (?C_STARTUP)
+
+
+SEGMENT                                          BIT_GROUP          DATA_GROUP 
+  +--> CALLED SEGMENT                         START    LENGTH     START    LENGTH
+---------------------------------------------------------------------------------
+?C_C51STARTUP                                 -----    -----      -----    -----
+  +--> ?PR?MAIN?MAIN
+
+BL51 BANKED LINKER/LOCATER V6.22                                                      09/25/2018  15:55:22  PAGE 2
+
+
+?PR?MAIN?MAIN                                 -----    -----      -----    -----
+  +--> ?PR?ST75256_INIT?SPI_ST75256
+  +--> ?CO?MAIN
+  +--> ?PR?_ST75256_SHOWSTRING?SPI_ST75256
+
+?PR?ST75256_INIT?SPI_ST75256                  -----    -----      -----    -----
+  +--> ?PR?_DELAY_MS?SPI_ST75256
+  +--> ?PR?SPI_SENDBYTE?SPI_ST75256
+  +--> ?PR?ST75256_CLEAR?SPI_ST75256
+
+?PR?SPI_SENDBYTE?SPI_ST75256                  0020H.0  0000H.1    0012H    0001H
+
+?PR?ST75256_CLEAR?SPI_ST75256                 -----    -----      -----    -----
+  +--> ?PR?_ST75256_SET_POS?SPI_ST75256
+  +--> ?PR?SPI_SENDBYTE?SPI_ST75256
+
+?PR?_ST75256_SET_POS?SPI_ST75256              -----    -----      000EH    0004H
+  +--> ?PR?SPI_SENDBYTE?SPI_ST75256
+
+?PR?_ST75256_SHOWSTRING?SPI_ST75256           -----    -----      0008H    0006H
+  +--> ?PR?_STRLEN?STRLEN
+  +--> ?PR?_ST75256_SHOWCHAR_6X8?SPI_ST75256
+
+?PR?_ST75256_SHOWCHAR_6X8?SPI_ST75256         -----    -----      -----    -----
+  +--> ?PR?_ST75256_SET_POS?SPI_ST75256
+  +--> ?CO?SPI_ST75256
+  +--> ?PR?SPI_SENDBYTE?SPI_ST75256
+
+
+
+SYMBOL TABLE OF MODULE:  .\Objects\TEST (?C_STARTUP)
+
+  VALUE           TYPE          NAME
+  ----------------------------------
+
+  -------         MODULE        ?C_STARTUP
+  C:0556H         SEGMENT       ?C_C51STARTUP
+  I:0021H         SEGMENT       ?STACK
+  C:0000H         PUBLIC        ?C_STARTUP
+  D:00E0H         SYMBOL        ACC
+  D:00F0H         SYMBOL        B
+  D:0083H         SYMBOL        DPH
+  D:0082H         SYMBOL        DPL
+  N:0000H         SYMBOL        IBPSTACK
+  N:0100H         SYMBOL        IBPSTACKTOP
+  N:0080H         SYMBOL        IDATALEN
+  C:0559H         SYMBOL        IDATALOOP
+  N:0000H         SYMBOL        PBPSTACK
+  N:0100H         SYMBOL        PBPSTACKTOP
+  N:0000H         SYMBOL        PDATALEN
+  N:0000H         SYMBOL        PDATASTART
+  N:0000H         SYMBOL        PPAGE
+  N:0000H         SYMBOL        PPAGEENABLE
+  D:00A0H         SYMBOL        PPAGE_SFR
+  D:0081H         SYMBOL        SP
+  C:0556H         SYMBOL        STARTUP1
+  N:0000H         SYMBOL        XBPSTACK
+BL51 BANKED LINKER/LOCATER V6.22                                                      09/25/2018  15:55:22  PAGE 3
+
+
+  N:0000H         SYMBOL        XBPSTACKTOP
+  N:0000H         SYMBOL        XDATALEN
+  N:0000H         SYMBOL        XDATASTART
+  C:0000H         LINE#         126
+  C:0556H         LINE#         133
+  C:0558H         LINE#         134
+  C:0559H         LINE#         135
+  C:055AH         LINE#         136
+  C:055CH         LINE#         185
+  C:055FH         LINE#         196
+  -------         ENDMOD        ?C_STARTUP
+
+  -------         MODULE        SPI_ST75256
+  C:0000H         SYMBOL        _ICE_DUMMY_
+  C:0480H         PUBLIC        _ST75256_ShowChar_6x8
+  D:0092H         PUBLIC        P1M0
+  D:0091H         PUBLIC        P1M1
+  D:0080H         PUBLIC        P0
+  D:0090H         PUBLIC        P1
+  D:00A0H         PUBLIC        P2
+  D:00B0H         PUBLIC        P3
+  D:00C0H         PUBLIC        P4
+  D:00C8H         PUBLIC        P5
+  D:00E8H         PUBLIC        P6
+  D:00F8H         PUBLIC        P7
+  D:00A8H         PUBLIC        IE
+  C:04E7H         PUBLIC        _Delay_mS
+  D:00B8H         PUBLIC        IP
+  B:00D0H.7       PUBLIC        CY
+  D:00D8H         PUBLIC        CCON
+  C:022BH         PUBLIC        ST75256_Init
+  C:0003H         PUBLIC        F6x8
+  B:0090H.0       PUBLIC        P10
+  C:0356H         PUBLIC        _ST75256_ShowString
+  B:0090H.1       PUBLIC        P11
+  B:0090H.2       PUBLIC        P12
+  D:0098H         PUBLIC        SCON
+  B:0090H.3       PUBLIC        P13
+  D:0088H         PUBLIC        TCON
+  B:0090H.4       PUBLIC        P14
+  C:0441H         PUBLIC        _ST75256_Set_Pos
+  C:0528H         PUBLIC        SPI_SendByte
+  D:00D0H         PUBLIC        PSW
+  C:0504H         PUBLIC        ST75256_Clear
+  C:04E3H         SYMBOL        L?0039
+  -------         PROC          L?0038
+  -------         ENDPROC       L?0038
+  C:04E3H         SYMBOL        L?0039
+  -------         PROC          _DELAY_MS
+  D:0006H         SYMBOL        mS
+  -------         DO            
+  D:0005H         SYMBOL        i
+  D:0004H         SYMBOL        j
+  D:0006H         SYMBOL        k
+  -------         ENDDO         
+  C:04E7H         LINE#         6
+  C:04E7H         LINE#         7
+BL51 BANKED LINKER/LOCATER V6.22                                                      09/25/2018  15:55:22  PAGE 4
+
+
+  C:04E7H         LINE#         10
+  C:04EBH         LINE#         11
+  C:04F4H         LINE#         12
+  C:04F4H         LINE#         13
+  C:04F6H         LINE#         14
+  C:04F6H         LINE#         15
+  C:04FAH         LINE#         16
+  C:04FCH         LINE#         17
+  C:0503H         LINE#         18
+  -------         ENDPROC       _DELAY_MS
+  C:0523H         SYMBOL        L?0037
+  -------         PROC          L?0036
+  -------         ENDPROC       L?0036
+  C:0523H         SYMBOL        L?0037
+  -------         PROC          SPI_SENDBYTE
+  B:0020H.0       SYMBOL        COMMAND
+  D:0012H         SYMBOL        dat
+  -------         DO            
+  D:0007H         SYMBOL        i
+  -------         ENDDO         
+  C:0528H         LINE#         27
+  C:0528H         LINE#         28
+  C:0528H         LINE#         30
+  C:052AH         LINE#         31
+  C:052EH         LINE#         32
+  C:0530H         LINE#         33
+  C:0530H         LINE#         34
+  C:0532H         LINE#         35
+  C:0538H         LINE#         36
+  C:053AH         LINE#         37
+  C:053CH         LINE#         38
+  C:053EH         LINE#         39
+  C:0540H         LINE#         40
+  -------         ENDPROC       SPI_SENDBYTE
+  -------         PROC          _ST75256_SET_POS
+  D:0006H         SYMBOL        x_start
+  D:0005H         SYMBOL        y_start
+  D:0003H         SYMBOL        x_end
+  D:0011H         SYMBOL        y_end
+  C:0441H         LINE#         45
+  C:0443H         LINE#         46
+  C:0443H         LINE#         47
+  C:044BH         LINE#         49
+  C:0453H         LINE#         50
+  C:045AH         LINE#         51
+  C:0461H         LINE#         53
+  C:0469H         LINE#         54
+  C:0470H         LINE#         55
+  C:0478H         LINE#         57
+  -------         ENDPROC       _ST75256_SET_POS
+  -------         PROC          _ST75256_SHOWCHAR_6X8
+  D:0007H         SYMBOL        x
+  D:0005H         SYMBOL        y
+  D:0003H         SYMBOL        chr
+  -------         DO            
+  D:0004H         SYMBOL        c
+  D:0006H         SYMBOL        i
+BL51 BANKED LINKER/LOCATER V6.22                                                      09/25/2018  15:55:22  PAGE 5
+
+
+  -------         ENDDO         
+  C:0480H         LINE#         65
+  C:0480H         LINE#         66
+  C:0480H         LINE#         68
+  C:0484H         LINE#         70
+  C:048FH         LINE#         71
+  C:0491H         LINE#         72
+  C:0491H         LINE#         73
+  C:04B3H         LINE#         74
+  C:04B7H         LINE#         75
+  -------         ENDPROC       _ST75256_SHOWCHAR_6X8
+  -------         PROC          _ST75256_SHOWSTRING
+  D:0008H         SYMBOL        x
+  D:0009H         SYMBOL        y
+  D:000AH         SYMBOL        chr
+  -------         DO            
+  D:000DH         SYMBOL        i
+  -------         ENDDO         
+  C:0356H         LINE#         81
+  C:0360H         LINE#         82
+  C:0360H         LINE#         84
+  C:0372H         LINE#         85
+  C:0372H         LINE#         86
+  C:037DH         LINE#         87
+  C:0387H         LINE#         88
+  C:039EH         LINE#         89
+  C:03A4H         LINE#         90
+  C:03A8H         LINE#         91
+  -------         ENDPROC       _ST75256_SHOWSTRING
+  -------         PROC          ST75256_CLEAR
+  -------         DO            
+  D:0006H         SYMBOL        i
+  D:0004H         SYMBOL        j
+  -------         ENDDO         
+  C:0504H         LINE#         96
+  C:0504H         LINE#         97
+  C:0504H         LINE#         99
+  C:0506H         LINE#         100
+  C:0506H         LINE#         101
+  C:0512H         LINE#         102
+  C:0514H         LINE#         103
+  C:0514H         LINE#         104
+  C:0517H         LINE#         105
+  C:051AH         LINE#         106
+  C:051EH         LINE#         107
+  C:0522H         LINE#         108
+  -------         ENDPROC       ST75256_CLEAR
+  -------         PROC          ST75256_INIT
+  C:022BH         LINE#         113
+  C:022BH         LINE#         114
+  C:022BH         LINE#         115
+  C:0231H         LINE#         116
+  C:0233H         LINE#         117
+  C:023AH         LINE#         118
+  C:023CH         LINE#         119
+  C:0243H         LINE#         120
+  C:024BH         LINE#         121
+BL51 BANKED LINKER/LOCATER V6.22                                                      09/25/2018  15:55:22  PAGE 6
+
+
+  C:0253H         LINE#         122
+  C:025BH         LINE#         123
+  C:025EH         LINE#         124
+  C:0266H         LINE#         125
+  C:0269H         LINE#         126
+  C:0271H         LINE#         127
+  C:0279H         LINE#         128
+  C:027CH         LINE#         130
+  C:0284H         LINE#         131
+  C:028CH         LINE#         132
+  C:0294H         LINE#         134
+  C:029CH         LINE#         136
+  C:02A4H         LINE#         137
+  C:02ACH         LINE#         139
+  C:02B4H         LINE#         140
+  C:02B7H         LINE#         141
+  C:02BFH         LINE#         142
+  C:02C7H         LINE#         144
+  C:02CFH         LINE#         145
+  C:02D7H         LINE#         147
+  C:02DFH         LINE#         149
+  C:02E7H         LINE#         150
+  C:02EFH         LINE#         152
+  C:02F7H         LINE#         153
+  C:02FAH         LINE#         154
+  C:0302H         LINE#         155
+  C:030AH         LINE#         157
+  C:0312H         LINE#         158
+  C:0315H         LINE#         160
+  C:031DH         LINE#         162
+  C:0325H         LINE#         164
+  C:032DH         LINE#         165
+  C:0330H         LINE#         166
+  C:0338H         LINE#         168
+  C:0340H         LINE#         169
+  C:0343H         LINE#         170
+  C:034BH         LINE#         172
+  C:0353H         LINE#         174
+  -------         ENDPROC       ST75256_INIT
+  -------         ENDMOD        SPI_ST75256
+
+  -------         MODULE        MAIN
+  C:0000H         SYMBOL        _ICE_DUMMY_
+  D:0080H         PUBLIC        P0
+  D:0090H         PUBLIC        P1
+  D:00A0H         PUBLIC        P2
+  D:00B0H         PUBLIC        P3
+  D:00C0H         PUBLIC        P4
+  D:00C8H         PUBLIC        P5
+  D:00E8H         PUBLIC        P6
+  D:00F8H         PUBLIC        P7
+  D:00A8H         PUBLIC        IE
+  D:00B8H         PUBLIC        IP
+  D:00D8H         PUBLIC        CCON
+  C:04B8H         PUBLIC        main
+  D:0098H         PUBLIC        SCON
+  D:0088H         PUBLIC        TCON
+BL51 BANKED LINKER/LOCATER V6.22                                                      09/25/2018  15:55:22  PAGE 7
+
+
+  D:00D0H         PUBLIC        PSW
+  -------         PROC          MAIN
+  C:04B8H         LINE#         3
+  C:04B8H         LINE#         4
+  C:04B8H         LINE#         5
+  C:04BBH         LINE#         6
+  C:04C7H         LINE#         7
+  C:04D4H         LINE#         8
+  C:04E1H         LINE#         10
+  -------         ENDPROC       MAIN
+  -------         ENDMOD        MAIN
+
+  -------         MODULE        ?C?CLDOPTR
+  C:03FBH         PUBLIC        ?C?CLDOPTR
+  -------         ENDMOD        ?C?CLDOPTR
+
+  -------         MODULE        STRLEN
+  C:0541H         PUBLIC        _STRLEN
+  -------         ENDMOD        STRLEN
+
+  -------         MODULE        ?C?CLDPTR
+  C:0428H         PUBLIC        ?C?CLDPTR
+  -------         ENDMOD        ?C?CLDPTR
+
+Program Size: data=20.1 xdata=0 code=1378
+LINK/LOCATE RUN COMPLETE.  0 WARNING(S),  0 ERROR(S)

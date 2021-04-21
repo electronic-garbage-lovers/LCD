@@ -1,0 +1,47 @@
+Dependencies for Project 'WST7567_SPI', Target 'Target 1': (DO NOT MODIFY !)
+F (.\USER_CODE\main.c)(0x5B918B3C)(--c99 --gnu -c --cpu Cortex-M3 -D__EVAL -g -O0 --apcs=interwork --split_sections -I .\CMSIS -I .\USER_DRV-I.\RTE\_Target_1-IC:\Keil_v5\ARM\PACK\Keil\STM32F1xx_DFP\2.2.0\Device\Include-IC:\Keil_v5\ARM\CMSIS\Include-D__UVISION_VERSION="525" -DSTM32F10X_HD-o .\objects\main.o --omf_browse .\objects\main.crf --depend .\objects\main.d)
+I (.\CMSIS\stm32f10x.h)(0x59EE2257)
+I (.\CMSIS\core_cm3.h)(0x4D523B58)
+I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x599ECD2E)
+I (.\CMSIS\system_stm32f10x.h)(0x4D783CAA)
+I (.\USER_DRV\Stm32f10xGpioInit.h)(0x5A870BC7)
+I (.\USER_DRV\delay.h)(0x59E206DE)
+I (.\USER_DRV\WST7567.H)(0x5B198087)
+I (.\USER_DRV\ASCII_FONT.h)(0x5B197A11)
+I (.\USER_DRV\gImage_test.h)(0x5B1951F0)
+F (.\USER_DRV\delay.c)(0x5B192677)(--c99 --gnu -c --cpu Cortex-M3 -D__EVAL -g -O0 --apcs=interwork --split_sections -I .\CMSIS -I .\USER_DRV-I.\RTE\_Target_1-IC:\Keil_v5\ARM\PACK\Keil\STM32F1xx_DFP\2.2.0\Device\Include-IC:\Keil_v5\ARM\CMSIS\Include-D__UVISION_VERSION="525" -DSTM32F10X_HD-o .\objects\delay.o --omf_browse .\objects\delay.crf --depend .\objects\delay.d)
+I (.\CMSIS\stm32f10x.h)(0x59EE2257)
+I (.\CMSIS\core_cm3.h)(0x4D523B58)
+I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x599ECD2E)
+I (.\CMSIS\system_stm32f10x.h)(0x4D783CAA)
+F (.\USER_DRV\delay.h)(0x59E206DE)()
+F (.\USER_DRV\Stm32f10xGpioInit.c)(0x5B192834)(--c99 --gnu -c --cpu Cortex-M3 -D__EVAL -g -O0 --apcs=interwork --split_sections -I .\CMSIS -I .\USER_DRV-I.\RTE\_Target_1-IC:\Keil_v5\ARM\PACK\Keil\STM32F1xx_DFP\2.2.0\Device\Include-IC:\Keil_v5\ARM\CMSIS\Include-D__UVISION_VERSION="525" -DSTM32F10X_HD-o .\objects\stm32f10xgpioinit.o --omf_browse .\objects\stm32f10xgpioinit.crf --depend .\objects\stm32f10xgpioinit.d)
+I (.\CMSIS\stm32f10x.h)(0x59EE2257)
+I (.\CMSIS\core_cm3.h)(0x4D523B58)
+I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x599ECD2E)
+I (.\CMSIS\system_stm32f10x.h)(0x4D783CAA)
+F (.\USER_DRV\Stm32f10xGpioInit.h)(0x5A870BC7)()
+F (.\USER_DRV\WST7567.C)(0x5B92C868)(--c99 --gnu -c --cpu Cortex-M3 -D__EVAL -g -O0 --apcs=interwork --split_sections -I .\CMSIS -I .\USER_DRV-I.\RTE\_Target_1-IC:\Keil_v5\ARM\PACK\Keil\STM32F1xx_DFP\2.2.0\Device\Include-IC:\Keil_v5\ARM\CMSIS\Include-D__UVISION_VERSION="525" -DSTM32F10X_HD-o .\objects\wst7567.o --omf_browse .\objects\wst7567.crf --depend .\objects\wst7567.d)
+I (USER_DRV\WST7567.H)(0x5B198087)
+I (.\CMSIS\stm32f10x.h)(0x59EE2257)
+I (.\CMSIS\core_cm3.h)(0x4D523B58)
+I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x599ECD2E)
+I (.\CMSIS\system_stm32f10x.h)(0x4D783CAA)
+I (USER_DRV\delay.h)(0x59E206DE)
+I (USER_DRV\ASCII_FONT.h)(0x5B197A11)
+F (.\USER_DRV\WST7567.H)(0x5B198087)()
+F (.\USER_DRV\gImage_test.c)(0x5B9138D3)(--c99 --gnu -c --cpu Cortex-M3 -D__EVAL -g -O0 --apcs=interwork --split_sections -I .\CMSIS -I .\USER_DRV-I.\RTE\_Target_1-IC:\Keil_v5\ARM\PACK\Keil\STM32F1xx_DFP\2.2.0\Device\Include-IC:\Keil_v5\ARM\CMSIS\Include-D__UVISION_VERSION="525" -DSTM32F10X_HD-o .\objects\gimage_test.o --omf_browse .\objects\gimage_test.crf --depend .\objects\gimage_test.d)
+F (.\USER_DRV\gImage_test.h)(0x5B1951F0)()
+F (.\USER_DRV\ASCII_FONT.C)(0x5B197C7E)(--c99 --gnu -c --cpu Cortex-M3 -D__EVAL -g -O0 --apcs=interwork --split_sections -I .\CMSIS -I .\USER_DRV-I.\RTE\_Target_1-IC:\Keil_v5\ARM\PACK\Keil\STM32F1xx_DFP\2.2.0\Device\Include-IC:\Keil_v5\ARM\CMSIS\Include-D__UVISION_VERSION="525" -DSTM32F10X_HD-o .\objects\ascii_font.o --omf_browse .\objects\ascii_font.crf --depend .\objects\ascii_font.d)
+F (.\USER_DRV\ASCII_FONT.h)(0x5B197A11)()
+F (.\CMSIS\core_cm3.c)(0x4C0C587E)(--c99 --gnu -c --cpu Cortex-M3 -D__EVAL -g -O0 --apcs=interwork --split_sections -I .\CMSIS -I .\USER_DRV-I.\RTE\_Target_1-IC:\Keil_v5\ARM\PACK\Keil\STM32F1xx_DFP\2.2.0\Device\Include-IC:\Keil_v5\ARM\CMSIS\Include-D__UVISION_VERSION="525" -DSTM32F10X_HD-o .\objects\core_cm3.o --omf_browse .\objects\core_cm3.crf --depend .\objects\core_cm3.d)
+I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x599ECD2E)
+F (.\CMSIS\core_cm3.h)(0x4D523B58)()
+F (.\CMSIS\startup_stm32f10x_hd.s)(0x4D783CDE)(--cpu Cortex-M3 --pd "__EVAL SETA 1" -g --apcs=interwork -I.\RTE\_Target_1-IC:\Keil_v5\ARM\PACK\Keil\STM32F1xx_DFP\2.2.0\Device\Include-IC:\Keil_v5\ARM\CMSIS\Include--pd "__UVISION_VERSION SETA 525" --pd "STM32F10X_HD SETA 1"--list .\listings\startup_stm32f10x_hd.lst --xref -o .\objects\startup_stm32f10x_hd.o --depend .\objects\startup_stm32f10x_hd.d)
+F (.\CMSIS\stm32f10x.h)(0x59EE2257)()
+F (.\CMSIS\system_stm32f10x.c)(0x5A3BE951)(--c99 --gnu -c --cpu Cortex-M3 -D__EVAL -g -O0 --apcs=interwork --split_sections -I .\CMSIS -I .\USER_DRV-I.\RTE\_Target_1-IC:\Keil_v5\ARM\PACK\Keil\STM32F1xx_DFP\2.2.0\Device\Include-IC:\Keil_v5\ARM\CMSIS\Include-D__UVISION_VERSION="525" -DSTM32F10X_HD-o .\objects\system_stm32f10x.o --omf_browse .\objects\system_stm32f10x.crf --depend .\objects\system_stm32f10x.d)
+I (CMSIS\stm32f10x.h)(0x59EE2257)
+I (CMSIS\core_cm3.h)(0x4D523B58)
+I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x599ECD2E)
+I (CMSIS\system_stm32f10x.h)(0x4D783CAA)
+F (.\CMSIS\system_stm32f10x.h)(0x4D783CAA)()

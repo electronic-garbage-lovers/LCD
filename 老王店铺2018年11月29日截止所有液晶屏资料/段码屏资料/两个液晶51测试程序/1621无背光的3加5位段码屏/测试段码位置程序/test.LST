@@ -1,0 +1,138 @@
+C51 COMPILER V7.06   TEST                                                                  07/25/2018 12:59:35 PAGE 1   
+
+
+C51 COMPILER V7.06, COMPILATION OF MODULE TEST
+OBJECT MODULE PLACED IN test.OBJ
+COMPILER INVOKED BY: C:\Keil\C51\BIN\C51.EXE test.c OPTIMIZE(9,SPEED) BROWSE DEBUG OBJECTEXTEND
+
+stmt level    source
+
+   1          /*
+   2          无背光段码屏， 1621驱动
+   3          
+   4          2018-7-25 晴窗伴侣
+   5          */
+   6          // 测试哪一个位置，这个屏的位置是0,2,4 11,13,15,17，第4位的那个米字型点了678910共5个4bit  20bit
+   7          #define WEI 11
+   8          
+   9          #include<reg52.h> //包含头文件，一般情况不需要改动，头文件包含特殊功能寄存器的定义
+  10          #include<intrins.h>
+  11          
+  12          //D1201控制位（液晶模块接口定义，根据自已的需要更改）
+  13          sbit D1201_DAT=P3^5;
+  14          sbit D1201_CS=P3^2;     //lower enable
+  15          sbit D1201_WR=P3^4;     //rising edge
+  16          sbit D1201_RD=P3^3;
+  17          
+  18          #include "LCD-1621.c"     //3+5位段式液晶无背光 0.5元 LCD-V5.3 5v供电效果最好
+  19          //#include "DelayMs_15F104E6.h"    //15F104 6M延时
+  20          
+  21          sfr P3M0        =   0xB2;   //0000,0000 端口3模式寄存器0
+  22          
+  23          
+  24          
+  25          
+  26          
+  27          
+  28          /*------------------------------------------------
+  29           uS延时函数，含有输入参数 unsigned char t，无返回值
+  30           unsigned char 是定义无符号字符变量，其值的范围是
+  31           0~255 这里使用晶振12M，精确延时请使用汇编,大致延时
+  32           长度如下 T=tx2+5 uS 
+  33          ------------------------------------------------*/
+  34          void DelayUs2x(unsigned char t)
+  35          {   
+  36   1       while(--t);
+  37   1      }
+  38          
+  39          void DelayMs(unsigned int t)
+  40          {
+  41   1      while(--t)
+  42   1      {
+  43   2      DelayUs2x(235);
+  44   2      DelayUs2x(235);
+  45   2      DelayUs2x(235);
+  46   2      DelayUs2x(235);
+  47   2      DelayUs2x(235);
+  48   2      DelayUs2x(235);
+  49   2      DelayUs2x(235);
+  50   2      DelayUs2x(235);
+  51   2      DelayUs2x(235);
+  52   2      DelayUs2x(235);
+  53   2      }
+  54   1      
+  55   1      }
+C51 COMPILER V7.06   TEST                                                                  07/25/2018 12:59:35 PAGE 2   
+
+  56          
+  57          
+  58          
+  59          
+  60          
+  61          
+  62          
+  63          
+  64          /*------------------------------------------------
+  65                               main
+  66          ------------------------------------------------*/
+  67          void main()
+  68          {
+  69   1      unsigned char i;
+  70   1      unsigned char d;
+  71   1      
+  72   1      
+  73   1      //P3M0=0xF0;
+  74   1      
+  75   1      D1621_Init();
+  76   1      cls();
+  77   1      
+  78   1      while(1)
+  79   1      {
+  80   2      d=1;
+  81   2       D1201_CS=0;
+  82   2      
+  83   2      
+  84   2      
+  85   2      for(i=0;i<8;i++)
+  86   2      {
+  87   3      
+  88   3       D1201_CS=0;
+  89   3      
+  90   3       D1201WrDataCmd(WEI);//往RAM的地址4写数据?这里的参数范围为:0-31
+  91   3       SENTDATA(d);
+  92   3      
+  93   3      
+  94   3       D1201_CS=1;
+  95   3       DelayMs(250);
+  96   3       DelayMs(250);
+  97   3       DelayMs(250);
+  98   3       DelayMs(250);
+  99   3       d<<=1;
+ 100   3      }
+ 101   2      
+ 102   2      }
+ 103   1      
+ 104   1      
+ 105   1      
+ 106   1      
+ 107   1      
+ 108   1      
+ 109   1      
+ 110   1      }
+ 111          
+
+
+MODULE INFORMATION:   STATIC OVERLAYABLE
+   CODE SIZE        =    362    ----
+   CONSTANT SIZE    =     28    ----
+   XDATA SIZE       =   ----    ----
+C51 COMPILER V7.06   TEST                                                                  07/25/2018 12:59:35 PAGE 3   
+
+   PDATA SIZE       =   ----    ----
+   DATA SIZE        =   ----    ----
+   IDATA SIZE       =   ----    ----
+   BIT SIZE         =   ----       1
+END OF MODULE INFORMATION.
+
+
+C51 COMPILATION COMPLETE.  0 WARNING(S),  0 ERROR(S)

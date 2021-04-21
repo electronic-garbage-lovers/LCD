@@ -1,0 +1,19 @@
+--cpu Cortex-M3
+"..\temp\spi.o"
+"..\temp\ssd1331.o"
+"..\temp\delay.o"
+"..\temp\fonts.o"
+"..\temp\core_cm3.o"
+"..\temp\system_stm32f10x.o"
+"..\temp\startup_stm32f10x_hd.o"
+"..\temp\misc.o"
+"..\temp\stm32f10x_gpio.o"
+"..\temp\stm32f10x_rcc.o"
+"..\temp\stm32f10x_spi.o"
+"..\temp\config.o"
+"..\temp\main.o"
+"..\temp\stm32f10x_it.o"
+--strict --scatter "..\TEMP\SSD1331 OLED.sct"
+--summary_stderr --info summarysizes --map --load_addr_map_info --xref --callgraph --symbols
+--info sizes --info totals --info unused --info veneers
+--list "..\TEMP\SSD1331 OLED.map" -o "..\TEMP\SSD1331 OLED.axf"

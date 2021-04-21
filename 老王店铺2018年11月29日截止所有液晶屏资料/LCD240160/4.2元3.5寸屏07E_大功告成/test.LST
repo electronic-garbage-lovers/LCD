@@ -1,0 +1,310 @@
+C51 COMPILER V7.06   TEST                                                                  11/14/2018 22:53:25 PAGE 1   
+
+
+C51 COMPILER V7.06, COMPILATION OF MODULE TEST
+OBJECT MODULE PLACED IN test.OBJ
+COMPILER INVOKED BY: C:\Keil\C51\BIN\C51.EXE test.c OPTIMIZE(9,SPEED) BROWSE DEBUG OBJECTEXTEND
+
+stmt level    source
+
+   1          /* 
+   2          3.5´ç 240160 32»Ò¶ÈÆÁ
+   3          
+   4          F8x16
+   5          
+   6          ¸ÐÐ»ÏþÐÜQQ µÄÒý½Å¶¨ÒåºÍ³õÊ¼´úÂë
+   7          
+   8          2018-11-14
+   9          */
+  10          #include <reg52.H>
+  11          #include <intrins.h>
+  12          
+  13          #define uchar unsigned char
+  14          #define uint unsigned int
+  15          
+  16          
+  17          sbit lcd_rs=P1^1; 
+  18          sbit lcd_en=P1^2;
+  19          sbit lcd_wr=P1^3; 
+  20          sbit lcd_reset=P1^4;
+  21          sbit lcd_cs1=P1^0; 
+  22          
+  23          #define DataPort P0   //DataBUS
+  24          
+  25          #include "8x16.h"
+  26          
+  27          /*ÑÓÊ±£º1 ºÁÃëµÄi ±¶*/
+  28          void delay(int i)
+  29          {
+  30   1      int j,k;
+  31   1      for(j=0;j<i;j++)
+  32   1      for(k=0;k<110;k++);
+  33   1      }
+  34          /*ÑÓÊ±£º1us µÄi ±¶*/
+  35          void delay_us(int i)
+  36          {
+  37   1      int j,k;
+  38   1      for(j=0;j<i;j++)
+  39   1      for(k=0;k<2;k++);
+  40   1      }
+  41          
+  42          //²¢¿Ú·½Ê½
+  43          //Ð´Ö¸Áîµ½LCD Ä£¿é
+  44          void transfer_command_lcd(int data1)
+  45          {
+  46   1      lcd_rs=0;
+  47   1      lcd_en=1;
+  48   1      P0=data1;
+  49   1      lcd_en=0;
+  50   1      }
+  51          
+  52          //Ð´Êý¾Ýµ½LCD Ä£¿é
+  53          void transfer_data_lcd(int data1)
+  54          {
+  55   1      lcd_rs=1;
+C51 COMPILER V7.06   TEST                                                                  11/14/2018 22:53:25 PAGE 2   
+
+  56   1      lcd_en=1;
+  57   1      P0=data1;
+  58   1      lcd_en=0;
+  59   1      }
+  60          
+  61          
+  62          void initial_lcd()
+  63          {
+  64   1      lcd_wr=0;   //0 Ð´  1¶Á
+  65   1      lcd_cs1=0;  //cs 0ÓÐÐ§
+  66   1      lcd_reset=0; //rst
+  67   1      delay(50);
+  68   1      lcd_reset=1;
+  69   1      delay(50);
+  70   1      
+  71   1       
+  72   1      transfer_command_lcd(0x30); //EXT=0 
+  73   1      transfer_command_lcd(0x94); //Sleep out 
+  74   1      transfer_command_lcd(0x31); //EXT=1 
+  75   1      transfer_command_lcd(0xD7); //Autoread disable 
+  76   1      transfer_data_lcd(0X9F); // 
+  77   1      transfer_command_lcd(0x32); //Analog SET 
+  78   1      transfer_data_lcd(0x00); //OSC Frequency adjustment 
+  79   1      transfer_data_lcd(0x01); //Frequency on booster capacitors->6KHz 
+  80   1      transfer_data_lcd(0x03); //Bias=1/13 
+  81   1      transfer_command_lcd(0x20); //»Ò¶ÈÉèÖÃ 
+  82   1      transfer_data_lcd(0x01); 
+  83   1      transfer_data_lcd(0x03); 
+  84   1      transfer_data_lcd(0x05); 
+  85   1      transfer_data_lcd(0x07); 
+  86   1      transfer_data_lcd(0x09); 
+  87   1      transfer_data_lcd(0x0b); 
+  88   1      transfer_data_lcd(0x0d); 
+  89   1      transfer_data_lcd(0x10); 
+  90   1      transfer_data_lcd(0x11); 
+  91   1      transfer_data_lcd(0x13); 
+  92   1      transfer_data_lcd(0x15); 
+  93   1      transfer_data_lcd(0x17); 
+  94   1      transfer_data_lcd(0x19); 
+  95   1      transfer_data_lcd(0x1b); 
+  96   1      transfer_data_lcd(0x1d); 
+  97   1      transfer_data_lcd(0x1f); 
+  98   1      transfer_command_lcd(0x30); //EXT1=0£¬EXT0=0,±íÊ¾Ñ¡ÔñÁË¡°À©Õ¹Ö¸Áî±í 1¡± 
+  99   1      transfer_command_lcd(0x75); //Ò³µØÖ·ÉèÖÃ 
+ 100   1      transfer_data_lcd(0X00); //ÆðÊ¼Ò³µØÖ·£ºYS=0X00 
+ 101   1      transfer_data_lcd(0X14); //½áÊøÒ³µØÖ·£ºYE=0x1FÃ¿ 4 ÐÐÎªÒ»Ò³£¬µÚ 0¡«3 ÐÐÎªµÚ 0 Ò³£¬µÚ 124¡«127 ÐÐÎªµÚ 31 Ò³
+             -£¨31=0x1f£© 
+ 102   1      
+ 103   1      transfer_command_lcd(0x15); //ÁÐµØÖ·ÉèÖÃ 
+ 104   1      transfer_data_lcd(0X00); //ÆðÊ¼ÁÐµØÖ·£ºXS=0 
+ 105   1      transfer_data_lcd(0Xef); //½áÊøÁÐµØÖ·£ºXE=240£¨0xef£© 
+ 106   1      transfer_command_lcd(0xbc); //ÐÐÁÐÉ¨Ãè·½Ïò 
+ 107   1      transfer_data_lcd(0x02); //MX.MY=Normal 
+ 108   1      // transfer_command_lcd(0x0c); //Êý¾Ý¸ñÊ½Ñ¡Ôñ,0x0C ÊÇµÍÎ»ÔÚÇ° D0-D7,0x08 ÊÇ¸ßÎ»ÔÚÇ° D7-D0 
+ 109   1      transfer_command_lcd(0xCA); //ÏÔÊ¾¿ØÖÆ 
+ 110   1      transfer_data_lcd(0X00); //ÉèÖÃ CL Çý¶¯ÆµÂÊ£ºCLD=0 
+ 111   1      transfer_data_lcd(0X9F); //Õ¼¿Õ±È£ºDuty=160 
+ 112   1      transfer_data_lcd(0X20); //N ÐÐ·´ÏÔ£ºNline=off 
+ 113   1      transfer_command_lcd(0xF0); //ÏÔÊ¾Ä£Ê½ 
+ 114   1      transfer_data_lcd(159); //Èç¹ûÉèÎª 0x11£º±íÊ¾Ñ¡Ôñ 4 »Ò¶È¼¶Ä£Ê½£¬Èç¹ûÉèÎª 0x10:±íÊ¾Ñ¡ÔñºÚ°×Ä£Ê½ 
+ 115   1      transfer_command_lcd(0x81); //ÉèÖÃ¶Ô±È¶È£¬¡°0x81¡±²»¿É¸Ä¶¯£¬½ô¸ú×ÅµÄ 2 ¸öÊý¾ÝÊÇ¿É¸ÄµÄ£¬µ«¡°ÏÈÎ¢µ÷ºó´Öµ÷¡±Õ
+             -â 
+C51 COMPILER V7.06   TEST                                                                  11/14/2018 22:53:25 PAGE 3   
+
+ 116   1      transfer_data_lcd(0xA0);  //Î¢µ÷¶Ô±È¶È,¿Éµ÷·¶Î§ 0x00¡«0x3f£¬¹² 64 ¼¶ 0
+ 117   1      transfer_data_lcd(0x03); //´Öµ÷¶Ô±È¶È,¿Éµ÷·¶Î§ 0x00¡«0x07£¬¹² 8 ¼¶ 
+ 118   1      transfer_command_lcd(0x20); //µçÔ´¿ØÖÆ 
+ 119   1      transfer_data_lcd(0x0B); //D0=regulator ; D1=follower ; D3=booste, on:1 off:0 
+ 120   1      delay_us(100); 
+ 121   1      transfer_command_lcd(0xAF); //´ò¿ªÏÔÊ¾ 
+ 122   1      
+ 123   1      }
+ 124          
+ 125          
+ 126          
+ 127          
+ 128          
+ 129          
+ 130          
+ 131          
+ 132          
+ 133          unsigned int encode(unsigned char d1,unsigned char d2, unsigned char d3)
+ 134          {
+ 135   1      return (d3<<11)+(d2<<6) +d1 ;
+ 136   1      }
+ 137          
+ 138          
+ 139          
+ 140          
+ 141          
+ 142          #define STC90C
+ 143          #include "uart2017.c"
+ 144          
+ 145          void printf_num(unsigned char x)
+ 146          {
+ 147   1      Com_SendByte(0x30+x/100);
+ 148   1      Com_SendByte(0x30+x%100/10);
+ 149   1      Com_SendByte(0x30+x%10);
+ 150   1      Com_SendByte(' ');
+ 151   1      }
+ 152          
+ 153          
+ 154          void locate(unsigned char x, unsigned char y)
+ 155          {
+ 156   1      x+=24;
+ 157   1      y=159-y;
+ 158   1      transfer_command_lcd(x&0x0f);
+ 159   1      transfer_command_lcd(0x10|(x>>4));
+ 160   1      transfer_command_lcd(0x60+(y&0x0f));
+ 161   1      transfer_command_lcd(0x70+(y>>4));
+ 162   1      }
+ 163          
+ 164          
+ 165          
+ 166          void cls(unsigned int c)
+ 167          {
+ 168   1      unsigned char y,j;
+ 169   1      for(y=0;y<160;y++)
+ 170   1       {
+ 171   2        locate(0,y);
+ 172   2        for(j=0;j<80;j++)
+ 173   2         {
+ 174   3          transfer_data_lcd(c>>8);
+ 175   3          transfer_data_lcd(c);
+ 176   3         }
+ 177   2       }
+C51 COMPILER V7.06   TEST                                                                  11/14/2018 22:53:25 PAGE 4   
+
+ 178   1      }
+ 179          
+ 180          
+ 181          
+ 182          
+ 183          
+ 184          
+ 185          void printf_c(unsigned char x, unsigned char y,unsigned char c,unsigned char gray)
+ 186          {
+ 187   1      unsigned char i;         //Ñ­»·±äÁ¿
+ 188   1      unsigned char temp;      //ÔÝ´æ×ÖÄ£
+ 189   1      unsigned char d1,d2,d3;  //×¼±¸±àÂëµÄÈý¸öµã
+ 190   1      unsigned int lcddata;    //×¼±¸Ð´µ½Òº¾§µÄÊý¾Ý
+ 191   1      for(i=0;i<16;i++)
+ 192   1       {
+ 193   2        locate(x,y+i);
+ 194   2        temp=Font8x16[c][i];
+ 195   2        printf_num(temp); //´®¿Ú´òÓ¡×ÖÄ£´úÂë
+ 196   2      
+ 197   2        d1=0;d2=0;d3=0;
+ 198   2        if(temp&0x80) d1=gray;  
+ 199   2        if(temp&0x40) d2=gray;  
+ 200   2        if(temp&0x20) d3=gray;  
+ 201   2        lcddata=encode(d1,d2,d3);
+ 202   2        transfer_data_lcd(lcddata>>8);   
+ 203   2        transfer_data_lcd(lcddata);   
+ 204   2      
+ 205   2        d1=0;d2=0;d3=0;
+ 206   2        if(temp&0x10) d1=gray;  
+ 207   2        if(temp&0x08) d2=gray;  
+ 208   2        if(temp&0x04) d3=gray;  
+ 209   2        lcddata=encode(d1,d2,d3);
+ 210   2        transfer_data_lcd(lcddata>>8);   
+ 211   2        transfer_data_lcd(lcddata);   
+ 212   2      
+ 213   2        d1=0;d2=0;
+ 214   2        if(temp&0x02) d1=gray;  
+ 215   2        if(temp&0x01) d2=gray;  
+ 216   2        lcddata=encode(d1,d2,0);
+ 217   2        transfer_data_lcd(lcddata>>8);   
+ 218   2        transfer_data_lcd(lcddata);   
+ 219   2        
+ 220   2       }
+ 221   1      
+ 222   1      }
+ 223          
+ 224          void printf(unsigned char x, unsigned char y, unsigned char *s,unsigned char gray)
+ 225          {
+ 226   1      while(*s)
+ 227   1       {
+ 228   2        printf_c(x,y,*s,gray);
+ 229   2        s++;
+ 230   2        x+=3;
+ 231   2       }
+ 232   1      }
+ 233          
+ 234          /*---------------------
+ 235             »­ºáÏß   x2ÊÇ³¤¶È
+ 236          ---------------------*/
+ 237          void line(unsigned char x, unsigned char y, unsigned char x2, unsigned char gray)
+ 238          {
+ 239   1      locate(x,y);
+C51 COMPILER V7.06   TEST                                                                  11/14/2018 22:53:25 PAGE 5   
+
+ 240   1      x2/=3;
+ 241   1      while(x2--)
+ 242   1       {
+ 243   2        transfer_data_lcd(encode(gray,gray,gray)>>8);
+ 244   2        transfer_data_lcd(encode(gray,gray,gray));
+ 245   2       }
+ 246   1      
+ 247   1      }
+ 248          
+ 249          void main()
+ 250          {
+ 251   1      unsigned char i;
+ 252   1      delay(100);
+ 253   1      InitUART();
+ 254   1      SendStr("\r\n\r\nLCD TEST.\r\n\r\n");
+ 255   1      
+ 256   1      initial_lcd(); //¶ÔÒº¾§Ä£¿é½øÐÐ³õÊ¼»¯ÉèÖÃ
+ 257   1      
+ 258   1      cls(0x0000);
+ 259   1      printf(0,0," * LCD 240x160 TEXT Demo *",31);
+ 260   1      printf(6,40,"ABCDEFG abcdefg",31);
+ 261   1      printf(6,60,"1234567890+-*\.<>[];'|",31);
+ 262   1      printf(6,80,"Gray Level 0<-->31",31);
+ 263   1      printf(20,140,"2018-11-14",31);
+ 264   1      line(0,20,240,20);
+ 265   1      line(0,22,240,20);
+ 266   1      for(i=0;i<16;i++)
+ 267   1       printf_c(5+i*4,100,'*',i);
+ 268   1      for(;i<32;i++)
+ 269   1       printf_c(5+(i-16)*4,120,'*',i);
+ 270   1      
+ 271   1      while(1);
+ 272   1      
+ 273   1      
+ 274   1      }
+ 275          
+ 276          
+ 277          
+
+
+MODULE INFORMATION:   STATIC OVERLAYABLE
+   CODE SIZE        =   1077    ----
+   CONSTANT SIZE    =   2161    ----
+   XDATA SIZE       =   ----    ----
+   PDATA SIZE       =   ----    ----
+   DATA SIZE        =     20      22
+   IDATA SIZE       =   ----    ----
+   BIT SIZE         =      1    ----
+END OF MODULE INFORMATION.
+
+
+C51 COMPILATION COMPLETE.  0 WARNING(S),  0 ERROR(S)

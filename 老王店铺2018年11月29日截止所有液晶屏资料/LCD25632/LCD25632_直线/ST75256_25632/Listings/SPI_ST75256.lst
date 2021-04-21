@@ -1,0 +1,207 @@
+C51 COMPILER V9.54   SPI_ST75256                                                           09/25/2018 15:55:22 PAGE 1   
+
+
+C51 COMPILER V9.54, COMPILATION OF MODULE SPI_ST75256
+OBJECT MODULE PLACED IN .\Objects\SPI_ST75256.obj
+COMPILER INVOKED BY: d:\Keil_v5\C51\BIN\C51.EXE SPI_ST75256.c OPTIMIZE(8,SPEED) BROWSE INCDIR(..\ST75256_25632) DEBUG OB
+                    -JECTEXTEND PRINT(.\Listings\SPI_ST75256.lst) TABS(2) OBJECT(.\Objects\SPI_ST75256.obj)
+
+line level    source
+
+   1          #include "SPI_ST75256.h"
+   2          #include "lcdfont.h"
+   3          
+   4          /***************************************************************
+   5          ***************************************************************/
+   6          void Delay_mS(unsigned int mS)    //@11.0592MHz
+   7          {
+   8   1        unsigned char i,j;
+   9   1        unsigned int k;
+  10   1        if (mS==0) return;
+  11   1        for(k=mS;k>0;k--)
+  12   1        {
+  13   2          for(i=11;i>0;i--)
+  14   2          {
+  15   3            for(j=190;j>0;j--);
+  16   3          }
+  17   2        }
+  18   1      }
+  19          
+  20          /***************************************************************
+  21          ** 函数名称: SPI_SendByte
+  22          ** 功能描述: 向总线发送一个字节数据
+  23          ** 输　入:   
+  24          ** 输　出:   
+  25          ** 全局变量: 
+  26          ***************************************************************/
+  27          void SPI_SendByte(bit COMMAND,unsigned char dat)
+  28          {
+  29   1          unsigned char i;
+  30   1          SPI_CSB = 0;
+  31   1          SPI_A0 = COMMAND;
+  32   1          for (i=8; i>0; i--)         //8位计数器
+  33   1          {
+  34   2            SPI_SCL = 0;         //拉低时钟线
+  35   2            dat <<= 1;              //移出数据的最高位
+  36   2            SPI_SDA = CY;      //送数据口
+  37   2            SPI_SCL = 1;                //拉高时钟线
+  38   2          }
+  39   1          SPI_CSB = 1;
+  40   1      }
+  41          
+  42          /***************************************************************
+  43          //坐标设置
+  44          ***************************************************************/
+  45          void ST75256_Set_Pos(unsigned char x_start, unsigned char y_start,unsigned char x_end,unsigned char y_end)
+             - 
+  46          {
+  47   1        SPI_SendByte(SPI_COMMAND,0x30);      //EXT=0
+  48   1      
+  49   1        SPI_SendByte(SPI_COMMAND,0x15);      //Clumn Address setting(设置列地址) 
+  50   1        SPI_SendByte(SPI_DATA,x_start);         //
+  51   1        SPI_SendByte(SPI_DATA,x_end);         //
+  52   1      
+  53   1        SPI_SendByte(SPI_COMMAND,0x75);      // Page Address setting（设置页地址）
+C51 COMPILER V9.54   SPI_ST75256                                                           09/25/2018 15:55:22 PAGE 2   
+
+  54   1        SPI_SendByte(SPI_DATA,y_start);         //
+  55   1        SPI_SendByte(SPI_DATA,y_end);         //
+  56   1      
+  57   1        SPI_SendByte(SPI_COMMAND,0x5C);      //
+  58   1      
+  59   1      }       
+  60          
+  61          /***************************************************************
+  62            在指定位置显示一个6x8字符
+  63            x:0~127    y:0~3
+  64          ***************************************************************/
+  65          void ST75256_ShowChar_6x8(unsigned char x,unsigned char y,unsigned char chr)
+  66          {       
+  67   1        unsigned char c,i;
+  68   1        c = chr - ' ';//得到偏移后的值      
+  69   1      
+  70   1        ST75256_Set_Pos(x,y,x+6,y+1);
+  71   1        for(i=0;i<6;i++)
+  72   1        {
+  73   2          SPI_SendByte(SPI_DATA,F6x8[c][i]);
+  74   2        } 
+  75   1      }
+  76          
+  77          /***************************************************************
+  78            在指定位置显示一个字符串
+  79            x:0~127    y:0~3
+  80          ***************************************************************/
+  81          void ST75256_ShowString(unsigned char x,unsigned char y,unsigned char *chr)
+  82          {
+  83   1        unsigned char i;
+  84   1        for(i=0;i<(unsigned char)strlen(chr);i++)
+  85   1        { 
+  86   2          if(x>250) {x=0;y++;}
+  87   2          if(y>3) y=0;
+  88   2          ST75256_ShowChar_6x8(x,y,chr[i]);
+  89   2          x+=6;
+  90   2        }
+  91   1      }
+  92          
+  93          /***************************************************************
+  94           清屏
+  95          ***************************************************************/
+  96          void ST75256_Clear(void)
+  97          {
+  98   1        unsigned char i,j;
+  99   1        for (j=0;j<4;j++)
+ 100   1        {
+ 101   2          ST75256_Set_Pos(0,j,0xFF,0x28);
+ 102   2          for (i=0;i<128;i++) 
+ 103   2          {
+ 104   3            SPI_SendByte(SPI_DATA,0);
+ 105   3            SPI_SendByte(SPI_DATA,0);
+ 106   3          }
+ 107   2        }
+ 108   1      }
+ 109          
+ 110          /***************************************************************
+ 111           初始化
+ 112          ***************************************************************/
+ 113          void ST75256_Init(void)
+ 114          {   
+ 115   1        P1M0 |= 0x1F;P1M1 &= 0xE0;         //推挽
+C51 COMPILER V9.54   SPI_ST75256                                                           09/25/2018 15:55:22 PAGE 3   
+
+ 116   1        SPI_RST = 0;
+ 117   1        Delay_mS(200);
+ 118   1        SPI_RST = 1;
+ 119   1        Delay_mS(200);
+ 120   1        SPI_SendByte(SPI_COMMAND,0x30);      //EXT=0
+ 121   1        SPI_SendByte(SPI_COMMAND,0x94);      //Sleep out
+ 122   1        SPI_SendByte(SPI_COMMAND,0xD1);      //Turn on the internal oscillator 
+ 123   1        Delay_mS(50);
+ 124   1        SPI_SendByte(SPI_COMMAND,0xAE);      //display off
+ 125   1        Delay_mS(50);
+ 126   1        SPI_SendByte(SPI_COMMAND,0x20);      //Power control（功率控制）
+ 127   1        SPI_SendByte(SPI_DATA,0x0B);         //VB=VF=VR=1
+ 128   1        Delay_mS(50);
+ 129   1      
+ 130   1        SPI_SendByte(SPI_COMMAND,0x81);      //EV control 
+ 131   1        SPI_SendByte(SPI_DATA,0x0F);         //Vo=12.V  0x0F;0x03
+ 132   1        SPI_SendByte(SPI_DATA,0x03);
+ 133   1      
+ 134   1        SPI_SendByte(SPI_COMMAND,0x31);      //EXT=1
+ 135   1      
+ 136   1        SPI_SendByte(SPI_COMMAND,0xD7);      //Set auto-read instruction
+ 137   1        SPI_SendByte(SPI_DATA,0x9F);
+ 138   1        
+ 139   1        SPI_SendByte(SPI_COMMAND,0x32);      //Set analog circuit 
+ 140   1        SPI_SendByte(SPI_DATA,0x00);         //OSC Frequency adjustment
+ 141   1        SPI_SendByte(SPI_DATA,0x01);         //Frequency on booster capacitors- >6KHz
+ 142   1        SPI_SendByte(SPI_DATA,0x05);         //Bias=1/12
+ 143   1      
+ 144   1        SPI_SendByte(SPI_COMMAND,0x51);      //Booster Level x10
+ 145   1        SPI_SendByte(SPI_DATA,0xFB);
+ 146   1        
+ 147   1        SPI_SendByte(SPI_COMMAND,0x30);      //EXT=0
+ 148   1      
+ 149   1        SPI_SendByte(SPI_COMMAND,0xF0);      //Display Mode（显示模式）
+ 150   1        SPI_SendByte(SPI_DATA,0x10);         //10=Monochrome Mode,11=4Gray
+ 151   1        
+ 152   1        SPI_SendByte(SPI_COMMAND,0xCA);      //Display Control（显示控制）
+ 153   1        SPI_SendByte(SPI_DATA,0x00);
+ 154   1        SPI_SendByte(SPI_DATA,0xA1);         //这个地方必须设置为162，否则没有显示
+ 155   1        SPI_SendByte(SPI_DATA,0x20);         //Nline=off
+ 156   1        
+ 157   1        SPI_SendByte(SPI_COMMAND,0xBC);      //Data scan direction（数据扫描方向)
+ 158   1        SPI_SendByte(SPI_DATA,0x00);         //CL=0;MX=0;MY=0
+ 159   1      
+ 160   1        SPI_SendByte(SPI_COMMAND,0x0C);      //D0=1
+ 161   1        
+ 162   1        SPI_SendByte(SPI_COMMAND,0xA6);      //不反显
+ 163   1        
+ 164   1        SPI_SendByte(SPI_COMMAND,0x75);      //Page Address setting（设置页地址） 
+ 165   1        SPI_SendByte(SPI_DATA,0x00);         //Y Start = 0
+ 166   1        SPI_SendByte(SPI_DATA,0x28);         //Y End = 31
+ 167   1      
+ 168   1        SPI_SendByte(SPI_COMMAND,0x15);      //Clumn Address setting(设置列地址) 
+ 169   1        SPI_SendByte(SPI_DATA,0x00);         //X Start = 0
+ 170   1        SPI_SendByte(SPI_DATA,0xFF);         //X End = 255
+ 171   1      
+ 172   1        SPI_SendByte(SPI_COMMAND,0xAF);      //display on (LCD 显示)
+ 173   1      
+ 174   1        ST75256_Clear();
+ 175   1      } 
+ 176          
+
+C51 COMPILER V9.54   SPI_ST75256                                                           09/25/2018 15:55:22 PAGE 4   
+
+
+MODULE INFORMATION:   STATIC OVERLAYABLE
+   CODE SIZE        =    595    ----
+   CONSTANT SIZE    =    552    ----
+   XDATA SIZE       =   ----    ----
+   PDATA SIZE       =   ----    ----
+   DATA SIZE        =   ----      11
+   IDATA SIZE       =   ----    ----
+   BIT SIZE         =   ----       1
+END OF MODULE INFORMATION.
+
+
+C51 COMPILATION COMPLETE.  0 WARNING(S),  0 ERROR(S)

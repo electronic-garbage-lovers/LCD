@@ -1,0 +1,15 @@
+--cpu Cortex-M3
+".\objects\main.o"
+".\objects\delay.o"
+".\objects\stm32f10xgpioinit.o"
+".\objects\gimage_test.o"
+".\objects\ascii_font.o"
+".\objects\mrwang26pinlcd.o"
+".\objects\stm32f10x_afio.o"
+".\objects\core_cm3.o"
+".\objects\startup_stm32f10x_hd.o"
+".\objects\system_stm32f10x.o"
+--strict --scatter ".\Objects\MRWang26pinLCD.sct"
+--summary_stderr --info summarysizes --map --load_addr_map_info --xref --callgraph --symbols
+--info sizes --info totals --info unused --info veneers
+--list ".\Listings\MRWang26pinLCD.map" -o .\Objects\MRWang26pinLCD.axf

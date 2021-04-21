@@ -1,0 +1,275 @@
+Dependencies for Project 'SSD1331 OLED', Target 'SSD1331 OLED': (DO NOT MODIFY !)
+F (..\SRC\Hardware\SPI\SPI.c)(0x54AA31E8)(-c --cpu Cortex-M3 -g -O0 --apcs=interwork -I ..\SRC\Hardware\SPI -I ..\SRC\Hardware\delay -I ..\SRC\Hardware\SSD1331 -I ..\SRC\STM32F10x_LIB\CMSIS -I ..\SRC\STM32F10x_LIB\inc -I ..\SRC\USER -I ..\SRC\Hardware\Fonts-I.\RTE\_SSD1331_OLED-IC:\Keil_v5\ARM\PACK\ARM\CMSIS\5.4.0\CMSIS\Core\Include-IC:\Keil_v5\ARM\PACK\Keil\STM32F1xx_DFP\2.2.0\Device\Include-D__UVISION_VERSION="526" -D_RTE_ -DSTM32F10X_MD -DUSE_STDPERIPH_DRIVER -DSTM32F10X_HD -DINTERFACE_SPI-o ..\temp\spi.o --omf_browse ..\temp\spi.crf --depend ..\temp\spi.d)
+I (..\SRC\USER\LIB_Config.h)(0x569C594E)
+I (..\SRC\USER\MacroAndConst.h)(0x54AE44F8)
+I (C:\Keil_v5\ARM\ARMCC\include\stdio.h)(0x51C7B744)
+I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x51C7B744)
+I (C:\Keil_v5\ARM\ARMCC\include\stdbool.h)(0x51C7B744)
+I (..\SRC\USER\Config.h)(0x549CC81A)
+I (..\SRC\STM32F10x_LIB\CMSIS\stm32f10x.h)(0x4D783CB4)
+I (..\SRC\STM32F10x_LIB\CMSIS\core_cm3.h)(0x4D523B58)
+I (..\SRC\STM32F10x_LIB\CMSIS\system_stm32f10x.h)(0x4D783CAA)
+I (..\SRC\USER\stm32f10x_conf.h)(0x54913D00)
+I (..\SRC\STM32F10x_LIB\inc\stm32f10x_adc.h)(0x4D783BB4)
+I (..\SRC\STM32F10x_LIB\inc\stm32f10x_bkp.h)(0x4D783BB4)
+I (..\SRC\STM32F10x_LIB\inc\stm32f10x_exti.h)(0x4D783BB4)
+I (..\SRC\STM32F10x_LIB\inc\stm32f10x_gpio.h)(0x4D783BB4)
+I (..\SRC\STM32F10x_LIB\inc\stm32f10x_pwr.h)(0x4D783BB4)
+I (..\SRC\STM32F10x_LIB\inc\stm32f10x_rcc.h)(0x4D783BB4)
+I (..\SRC\STM32F10x_LIB\inc\stm32f10x_rtc.h)(0x4D783BB4)
+I (..\SRC\STM32F10x_LIB\inc\stm32f10x_spi.h)(0x4D783BB4)
+I (..\SRC\STM32F10x_LIB\inc\stm32f10x_tim.h)(0x4D783BB4)
+I (..\SRC\STM32F10x_LIB\inc\stm32f10x_usart.h)(0x4D783BB4)
+I (..\SRC\STM32F10x_LIB\inc\misc.h)(0x4D783BB4)
+I (..\SRC\Hardware\delay\delay.h)(0x545D89A2)
+I (..\SRC\Hardware\SPI\SPI.h)(0x54AA31E8)
+I (..\SRC\Hardware\SSD1331\SSD1331.h)(0x54C708A4)
+I (C:\Keil_v5\ARM\ARMCC\include\math.h)(0x51C7B744)
+I (C:\Keil_v5\ARM\ARMCC\include\stdlib.h)(0x51C7B744)
+I (..\SRC\Hardware\Fonts\Fonts.h)(0x54C7040A)
+F (..\SRC\Hardware\SSD1331\SSD1331.c)(0x54C99496)(-c --cpu Cortex-M3 -g -O0 --apcs=interwork -I ..\SRC\Hardware\SPI -I ..\SRC\Hardware\delay -I ..\SRC\Hardware\SSD1331 -I ..\SRC\STM32F10x_LIB\CMSIS -I ..\SRC\STM32F10x_LIB\inc -I ..\SRC\USER -I ..\SRC\Hardware\Fonts-I.\RTE\_SSD1331_OLED-IC:\Keil_v5\ARM\PACK\ARM\CMSIS\5.4.0\CMSIS\Core\Include-IC:\Keil_v5\ARM\PACK\Keil\STM32F1xx_DFP\2.2.0\Device\Include-D__UVISION_VERSION="526" -D_RTE_ -DSTM32F10X_MD -DUSE_STDPERIPH_DRIVER -DSTM32F10X_HD -DINTERFACE_SPI-o ..\temp\ssd1331.o --omf_browse ..\temp\ssd1331.crf --depend ..\temp\ssd1331.d)
+I (..\SRC\USER\LIB_Config.h)(0x569C594E)
+I (..\SRC\USER\MacroAndConst.h)(0x54AE44F8)
+I (C:\Keil_v5\ARM\ARMCC\include\stdio.h)(0x51C7B744)
+I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x51C7B744)
+I (C:\Keil_v5\ARM\ARMCC\include\stdbool.h)(0x51C7B744)
+I (..\SRC\USER\Config.h)(0x549CC81A)
+I (..\SRC\STM32F10x_LIB\CMSIS\stm32f10x.h)(0x4D783CB4)
+I (..\SRC\STM32F10x_LIB\CMSIS\core_cm3.h)(0x4D523B58)
+I (..\SRC\STM32F10x_LIB\CMSIS\system_stm32f10x.h)(0x4D783CAA)
+I (..\SRC\USER\stm32f10x_conf.h)(0x54913D00)
+I (..\SRC\STM32F10x_LIB\inc\stm32f10x_adc.h)(0x4D783BB4)
+I (..\SRC\STM32F10x_LIB\inc\stm32f10x_bkp.h)(0x4D783BB4)
+I (..\SRC\STM32F10x_LIB\inc\stm32f10x_exti.h)(0x4D783BB4)
+I (..\SRC\STM32F10x_LIB\inc\stm32f10x_gpio.h)(0x4D783BB4)
+I (..\SRC\STM32F10x_LIB\inc\stm32f10x_pwr.h)(0x4D783BB4)
+I (..\SRC\STM32F10x_LIB\inc\stm32f10x_rcc.h)(0x4D783BB4)
+I (..\SRC\STM32F10x_LIB\inc\stm32f10x_rtc.h)(0x4D783BB4)
+I (..\SRC\STM32F10x_LIB\inc\stm32f10x_spi.h)(0x4D783BB4)
+I (..\SRC\STM32F10x_LIB\inc\stm32f10x_tim.h)(0x4D783BB4)
+I (..\SRC\STM32F10x_LIB\inc\stm32f10x_usart.h)(0x4D783BB4)
+I (..\SRC\STM32F10x_LIB\inc\misc.h)(0x4D783BB4)
+I (..\SRC\Hardware\delay\delay.h)(0x545D89A2)
+I (..\SRC\Hardware\SPI\SPI.h)(0x54AA31E8)
+I (..\SRC\Hardware\SSD1331\SSD1331.h)(0x54C708A4)
+I (C:\Keil_v5\ARM\ARMCC\include\math.h)(0x51C7B744)
+I (C:\Keil_v5\ARM\ARMCC\include\stdlib.h)(0x51C7B744)
+I (..\SRC\Hardware\Fonts\Fonts.h)(0x54C7040A)
+F (..\SRC\Hardware\delay\delay.c)(0x548F9AB0)(-c --cpu Cortex-M3 -g -O0 --apcs=interwork -I ..\SRC\Hardware\SPI -I ..\SRC\Hardware\delay -I ..\SRC\Hardware\SSD1331 -I ..\SRC\STM32F10x_LIB\CMSIS -I ..\SRC\STM32F10x_LIB\inc -I ..\SRC\USER -I ..\SRC\Hardware\Fonts-I.\RTE\_SSD1331_OLED-IC:\Keil_v5\ARM\PACK\ARM\CMSIS\5.4.0\CMSIS\Core\Include-IC:\Keil_v5\ARM\PACK\Keil\STM32F1xx_DFP\2.2.0\Device\Include-D__UVISION_VERSION="526" -D_RTE_ -DSTM32F10X_MD -DUSE_STDPERIPH_DRIVER -DSTM32F10X_HD -DINTERFACE_SPI-o ..\temp\delay.o --omf_browse ..\temp\delay.crf --depend ..\temp\delay.d)
+I (..\SRC\USER\LIB_Config.h)(0x569C594E)
+I (..\SRC\USER\MacroAndConst.h)(0x54AE44F8)
+I (C:\Keil_v5\ARM\ARMCC\include\stdio.h)(0x51C7B744)
+I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x51C7B744)
+I (C:\Keil_v5\ARM\ARMCC\include\stdbool.h)(0x51C7B744)
+I (..\SRC\USER\Config.h)(0x549CC81A)
+I (..\SRC\STM32F10x_LIB\CMSIS\stm32f10x.h)(0x4D783CB4)
+I (..\SRC\STM32F10x_LIB\CMSIS\core_cm3.h)(0x4D523B58)
+I (..\SRC\STM32F10x_LIB\CMSIS\system_stm32f10x.h)(0x4D783CAA)
+I (..\SRC\USER\stm32f10x_conf.h)(0x54913D00)
+I (..\SRC\STM32F10x_LIB\inc\stm32f10x_adc.h)(0x4D783BB4)
+I (..\SRC\STM32F10x_LIB\inc\stm32f10x_bkp.h)(0x4D783BB4)
+I (..\SRC\STM32F10x_LIB\inc\stm32f10x_exti.h)(0x4D783BB4)
+I (..\SRC\STM32F10x_LIB\inc\stm32f10x_gpio.h)(0x4D783BB4)
+I (..\SRC\STM32F10x_LIB\inc\stm32f10x_pwr.h)(0x4D783BB4)
+I (..\SRC\STM32F10x_LIB\inc\stm32f10x_rcc.h)(0x4D783BB4)
+I (..\SRC\STM32F10x_LIB\inc\stm32f10x_rtc.h)(0x4D783BB4)
+I (..\SRC\STM32F10x_LIB\inc\stm32f10x_spi.h)(0x4D783BB4)
+I (..\SRC\STM32F10x_LIB\inc\stm32f10x_tim.h)(0x4D783BB4)
+I (..\SRC\STM32F10x_LIB\inc\stm32f10x_usart.h)(0x4D783BB4)
+I (..\SRC\STM32F10x_LIB\inc\misc.h)(0x4D783BB4)
+I (..\SRC\Hardware\delay\delay.h)(0x545D89A2)
+I (..\SRC\Hardware\SPI\SPI.h)(0x54AA31E8)
+I (..\SRC\Hardware\SSD1331\SSD1331.h)(0x54C708A4)
+I (C:\Keil_v5\ARM\ARMCC\include\math.h)(0x51C7B744)
+I (C:\Keil_v5\ARM\ARMCC\include\stdlib.h)(0x51C7B744)
+I (..\SRC\Hardware\Fonts\Fonts.h)(0x54C7040A)
+F (..\SRC\Hardware\Fonts\Fonts.c)(0x54C7040A)(-c --cpu Cortex-M3 -g -O0 --apcs=interwork -I ..\SRC\Hardware\SPI -I ..\SRC\Hardware\delay -I ..\SRC\Hardware\SSD1331 -I ..\SRC\STM32F10x_LIB\CMSIS -I ..\SRC\STM32F10x_LIB\inc -I ..\SRC\USER -I ..\SRC\Hardware\Fonts-I.\RTE\_SSD1331_OLED-IC:\Keil_v5\ARM\PACK\ARM\CMSIS\5.4.0\CMSIS\Core\Include-IC:\Keil_v5\ARM\PACK\Keil\STM32F1xx_DFP\2.2.0\Device\Include-D__UVISION_VERSION="526" -D_RTE_ -DSTM32F10X_MD -DUSE_STDPERIPH_DRIVER -DSTM32F10X_HD -DINTERFACE_SPI-o ..\temp\fonts.o --omf_browse ..\temp\fonts.crf --depend ..\temp\fonts.d)
+I (..\SRC\USER\LIB_Config.h)(0x569C594E)
+I (..\SRC\USER\MacroAndConst.h)(0x54AE44F8)
+I (C:\Keil_v5\ARM\ARMCC\include\stdio.h)(0x51C7B744)
+I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x51C7B744)
+I (C:\Keil_v5\ARM\ARMCC\include\stdbool.h)(0x51C7B744)
+I (..\SRC\USER\Config.h)(0x549CC81A)
+I (..\SRC\STM32F10x_LIB\CMSIS\stm32f10x.h)(0x4D783CB4)
+I (..\SRC\STM32F10x_LIB\CMSIS\core_cm3.h)(0x4D523B58)
+I (..\SRC\STM32F10x_LIB\CMSIS\system_stm32f10x.h)(0x4D783CAA)
+I (..\SRC\USER\stm32f10x_conf.h)(0x54913D00)
+I (..\SRC\STM32F10x_LIB\inc\stm32f10x_adc.h)(0x4D783BB4)
+I (..\SRC\STM32F10x_LIB\inc\stm32f10x_bkp.h)(0x4D783BB4)
+I (..\SRC\STM32F10x_LIB\inc\stm32f10x_exti.h)(0x4D783BB4)
+I (..\SRC\STM32F10x_LIB\inc\stm32f10x_gpio.h)(0x4D783BB4)
+I (..\SRC\STM32F10x_LIB\inc\stm32f10x_pwr.h)(0x4D783BB4)
+I (..\SRC\STM32F10x_LIB\inc\stm32f10x_rcc.h)(0x4D783BB4)
+I (..\SRC\STM32F10x_LIB\inc\stm32f10x_rtc.h)(0x4D783BB4)
+I (..\SRC\STM32F10x_LIB\inc\stm32f10x_spi.h)(0x4D783BB4)
+I (..\SRC\STM32F10x_LIB\inc\stm32f10x_tim.h)(0x4D783BB4)
+I (..\SRC\STM32F10x_LIB\inc\stm32f10x_usart.h)(0x4D783BB4)
+I (..\SRC\STM32F10x_LIB\inc\misc.h)(0x4D783BB4)
+I (..\SRC\Hardware\delay\delay.h)(0x545D89A2)
+I (..\SRC\Hardware\SPI\SPI.h)(0x54AA31E8)
+I (..\SRC\Hardware\SSD1331\SSD1331.h)(0x54C708A4)
+I (C:\Keil_v5\ARM\ARMCC\include\math.h)(0x51C7B744)
+I (C:\Keil_v5\ARM\ARMCC\include\stdlib.h)(0x51C7B744)
+I (..\SRC\Hardware\Fonts\Fonts.h)(0x54C7040A)
+F (..\SRC\STM32F10x_LIB\CMSIS\core_cm3.c)(0x4C0C587E)(-c --cpu Cortex-M3 -g -O0 --apcs=interwork -I ..\SRC\Hardware\SPI -I ..\SRC\Hardware\delay -I ..\SRC\Hardware\SSD1331 -I ..\SRC\STM32F10x_LIB\CMSIS -I ..\SRC\STM32F10x_LIB\inc -I ..\SRC\USER -I ..\SRC\Hardware\Fonts-I.\RTE\_SSD1331_OLED-IC:\Keil_v5\ARM\PACK\ARM\CMSIS\5.4.0\CMSIS\Core\Include-IC:\Keil_v5\ARM\PACK\Keil\STM32F1xx_DFP\2.2.0\Device\Include-D__UVISION_VERSION="526" -D_RTE_ -DSTM32F10X_MD -DUSE_STDPERIPH_DRIVER -DSTM32F10X_HD -DINTERFACE_SPI-o ..\temp\core_cm3.o --omf_browse ..\temp\core_cm3.crf --depend ..\temp\core_cm3.d)
+I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x51C7B744)
+F (..\SRC\STM32F10x_LIB\CMSIS\system_stm32f10x.c)(0x4D783CB0)(-c --cpu Cortex-M3 -g -O0 --apcs=interwork -I ..\SRC\Hardware\SPI -I ..\SRC\Hardware\delay -I ..\SRC\Hardware\SSD1331 -I ..\SRC\STM32F10x_LIB\CMSIS -I ..\SRC\STM32F10x_LIB\inc -I ..\SRC\USER -I ..\SRC\Hardware\Fonts-I.\RTE\_SSD1331_OLED-IC:\Keil_v5\ARM\PACK\ARM\CMSIS\5.4.0\CMSIS\Core\Include-IC:\Keil_v5\ARM\PACK\Keil\STM32F1xx_DFP\2.2.0\Device\Include-D__UVISION_VERSION="526" -D_RTE_ -DSTM32F10X_MD -DUSE_STDPERIPH_DRIVER -DSTM32F10X_HD -DINTERFACE_SPI-o ..\temp\system_stm32f10x.o --omf_browse ..\temp\system_stm32f10x.crf --depend ..\temp\system_stm32f10x.d)
+I (..\SRC\STM32F10x_LIB\CMSIS\stm32f10x.h)(0x4D783CB4)
+I (..\SRC\STM32F10x_LIB\CMSIS\core_cm3.h)(0x4D523B58)
+I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x51C7B744)
+I (..\SRC\STM32F10x_LIB\CMSIS\system_stm32f10x.h)(0x4D783CAA)
+I (..\SRC\USER\stm32f10x_conf.h)(0x54913D00)
+I (..\SRC\STM32F10x_LIB\inc\stm32f10x_adc.h)(0x4D783BB4)
+I (..\SRC\STM32F10x_LIB\inc\stm32f10x_bkp.h)(0x4D783BB4)
+I (..\SRC\STM32F10x_LIB\inc\stm32f10x_exti.h)(0x4D783BB4)
+I (..\SRC\STM32F10x_LIB\inc\stm32f10x_gpio.h)(0x4D783BB4)
+I (..\SRC\STM32F10x_LIB\inc\stm32f10x_pwr.h)(0x4D783BB4)
+I (..\SRC\STM32F10x_LIB\inc\stm32f10x_rcc.h)(0x4D783BB4)
+I (..\SRC\STM32F10x_LIB\inc\stm32f10x_rtc.h)(0x4D783BB4)
+I (..\SRC\STM32F10x_LIB\inc\stm32f10x_spi.h)(0x4D783BB4)
+I (..\SRC\STM32F10x_LIB\inc\stm32f10x_tim.h)(0x4D783BB4)
+I (..\SRC\STM32F10x_LIB\inc\stm32f10x_usart.h)(0x4D783BB4)
+I (..\SRC\STM32F10x_LIB\inc\misc.h)(0x4D783BB4)
+F (..\SRC\STM32F10x_LIB\CMSIS\startup_stm32f10x_hd.s)(0x53A0FF4C)(--cpu Cortex-M3 -g --apcs=interwork -I.\RTE\_SSD1331_OLED-IC:\Keil_v5\ARM\PACK\ARM\CMSIS\5.4.0\CMSIS\Core\Include-IC:\Keil_v5\ARM\PACK\Keil\STM32F1xx_DFP\2.2.0\Device\Include--pd "__UVISION_VERSION SETA 526" --pd "_RTE_ SETA 1" --pd "STM32F10X_MD SETA 1"--list ..\temp\startup_stm32f10x_hd.lst --xref -o ..\temp\startup_stm32f10x_hd.o --depend ..\temp\startup_stm32f10x_hd.d)
+F (..\SRC\STM32F10x_LIB\src\misc.c)(0x4D783BB4)(-c --cpu Cortex-M3 -g -O0 --apcs=interwork -I ..\SRC\Hardware\SPI -I ..\SRC\Hardware\delay -I ..\SRC\Hardware\SSD1331 -I ..\SRC\STM32F10x_LIB\CMSIS -I ..\SRC\STM32F10x_LIB\inc -I ..\SRC\USER -I ..\SRC\Hardware\Fonts-I.\RTE\_SSD1331_OLED-IC:\Keil_v5\ARM\PACK\ARM\CMSIS\5.4.0\CMSIS\Core\Include-IC:\Keil_v5\ARM\PACK\Keil\STM32F1xx_DFP\2.2.0\Device\Include-D__UVISION_VERSION="526" -D_RTE_ -DSTM32F10X_MD -DUSE_STDPERIPH_DRIVER -DSTM32F10X_HD -DINTERFACE_SPI-o ..\temp\misc.o --omf_browse ..\temp\misc.crf --depend ..\temp\misc.d)
+I (..\SRC\STM32F10x_LIB\inc\misc.h)(0x4D783BB4)
+I (..\SRC\STM32F10x_LIB\CMSIS\stm32f10x.h)(0x4D783CB4)
+I (..\SRC\STM32F10x_LIB\CMSIS\core_cm3.h)(0x4D523B58)
+I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x51C7B744)
+I (..\SRC\STM32F10x_LIB\CMSIS\system_stm32f10x.h)(0x4D783CAA)
+I (..\SRC\USER\stm32f10x_conf.h)(0x54913D00)
+I (..\SRC\STM32F10x_LIB\inc\stm32f10x_adc.h)(0x4D783BB4)
+I (..\SRC\STM32F10x_LIB\inc\stm32f10x_bkp.h)(0x4D783BB4)
+I (..\SRC\STM32F10x_LIB\inc\stm32f10x_exti.h)(0x4D783BB4)
+I (..\SRC\STM32F10x_LIB\inc\stm32f10x_gpio.h)(0x4D783BB4)
+I (..\SRC\STM32F10x_LIB\inc\stm32f10x_pwr.h)(0x4D783BB4)
+I (..\SRC\STM32F10x_LIB\inc\stm32f10x_rcc.h)(0x4D783BB4)
+I (..\SRC\STM32F10x_LIB\inc\stm32f10x_rtc.h)(0x4D783BB4)
+I (..\SRC\STM32F10x_LIB\inc\stm32f10x_spi.h)(0x4D783BB4)
+I (..\SRC\STM32F10x_LIB\inc\stm32f10x_tim.h)(0x4D783BB4)
+I (..\SRC\STM32F10x_LIB\inc\stm32f10x_usart.h)(0x4D783BB4)
+F (..\SRC\STM32F10x_LIB\src\stm32f10x_gpio.c)(0x4D79EEC6)(-c --cpu Cortex-M3 -g -O0 --apcs=interwork -I ..\SRC\Hardware\SPI -I ..\SRC\Hardware\delay -I ..\SRC\Hardware\SSD1331 -I ..\SRC\STM32F10x_LIB\CMSIS -I ..\SRC\STM32F10x_LIB\inc -I ..\SRC\USER -I ..\SRC\Hardware\Fonts-I.\RTE\_SSD1331_OLED-IC:\Keil_v5\ARM\PACK\ARM\CMSIS\5.4.0\CMSIS\Core\Include-IC:\Keil_v5\ARM\PACK\Keil\STM32F1xx_DFP\2.2.0\Device\Include-D__UVISION_VERSION="526" -D_RTE_ -DSTM32F10X_MD -DUSE_STDPERIPH_DRIVER -DSTM32F10X_HD -DINTERFACE_SPI-o ..\temp\stm32f10x_gpio.o --omf_browse ..\temp\stm32f10x_gpio.crf --depend ..\temp\stm32f10x_gpio.d)
+I (..\SRC\STM32F10x_LIB\inc\stm32f10x_gpio.h)(0x4D783BB4)
+I (..\SRC\STM32F10x_LIB\CMSIS\stm32f10x.h)(0x4D783CB4)
+I (..\SRC\STM32F10x_LIB\CMSIS\core_cm3.h)(0x4D523B58)
+I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x51C7B744)
+I (..\SRC\STM32F10x_LIB\CMSIS\system_stm32f10x.h)(0x4D783CAA)
+I (..\SRC\USER\stm32f10x_conf.h)(0x54913D00)
+I (..\SRC\STM32F10x_LIB\inc\stm32f10x_adc.h)(0x4D783BB4)
+I (..\SRC\STM32F10x_LIB\inc\stm32f10x_bkp.h)(0x4D783BB4)
+I (..\SRC\STM32F10x_LIB\inc\stm32f10x_exti.h)(0x4D783BB4)
+I (..\SRC\STM32F10x_LIB\inc\stm32f10x_pwr.h)(0x4D783BB4)
+I (..\SRC\STM32F10x_LIB\inc\stm32f10x_rcc.h)(0x4D783BB4)
+I (..\SRC\STM32F10x_LIB\inc\stm32f10x_rtc.h)(0x4D783BB4)
+I (..\SRC\STM32F10x_LIB\inc\stm32f10x_spi.h)(0x4D783BB4)
+I (..\SRC\STM32F10x_LIB\inc\stm32f10x_tim.h)(0x4D783BB4)
+I (..\SRC\STM32F10x_LIB\inc\stm32f10x_usart.h)(0x4D783BB4)
+I (..\SRC\STM32F10x_LIB\inc\misc.h)(0x4D783BB4)
+F (..\SRC\STM32F10x_LIB\src\stm32f10x_rcc.c)(0x4D783BB4)(-c --cpu Cortex-M3 -g -O0 --apcs=interwork -I ..\SRC\Hardware\SPI -I ..\SRC\Hardware\delay -I ..\SRC\Hardware\SSD1331 -I ..\SRC\STM32F10x_LIB\CMSIS -I ..\SRC\STM32F10x_LIB\inc -I ..\SRC\USER -I ..\SRC\Hardware\Fonts-I.\RTE\_SSD1331_OLED-IC:\Keil_v5\ARM\PACK\ARM\CMSIS\5.4.0\CMSIS\Core\Include-IC:\Keil_v5\ARM\PACK\Keil\STM32F1xx_DFP\2.2.0\Device\Include-D__UVISION_VERSION="526" -D_RTE_ -DSTM32F10X_MD -DUSE_STDPERIPH_DRIVER -DSTM32F10X_HD -DINTERFACE_SPI-o ..\temp\stm32f10x_rcc.o --omf_browse ..\temp\stm32f10x_rcc.crf --depend ..\temp\stm32f10x_rcc.d)
+I (..\SRC\STM32F10x_LIB\inc\stm32f10x_rcc.h)(0x4D783BB4)
+I (..\SRC\STM32F10x_LIB\CMSIS\stm32f10x.h)(0x4D783CB4)
+I (..\SRC\STM32F10x_LIB\CMSIS\core_cm3.h)(0x4D523B58)
+I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x51C7B744)
+I (..\SRC\STM32F10x_LIB\CMSIS\system_stm32f10x.h)(0x4D783CAA)
+I (..\SRC\USER\stm32f10x_conf.h)(0x54913D00)
+I (..\SRC\STM32F10x_LIB\inc\stm32f10x_adc.h)(0x4D783BB4)
+I (..\SRC\STM32F10x_LIB\inc\stm32f10x_bkp.h)(0x4D783BB4)
+I (..\SRC\STM32F10x_LIB\inc\stm32f10x_exti.h)(0x4D783BB4)
+I (..\SRC\STM32F10x_LIB\inc\stm32f10x_gpio.h)(0x4D783BB4)
+I (..\SRC\STM32F10x_LIB\inc\stm32f10x_pwr.h)(0x4D783BB4)
+I (..\SRC\STM32F10x_LIB\inc\stm32f10x_rtc.h)(0x4D783BB4)
+I (..\SRC\STM32F10x_LIB\inc\stm32f10x_spi.h)(0x4D783BB4)
+I (..\SRC\STM32F10x_LIB\inc\stm32f10x_tim.h)(0x4D783BB4)
+I (..\SRC\STM32F10x_LIB\inc\stm32f10x_usart.h)(0x4D783BB4)
+I (..\SRC\STM32F10x_LIB\inc\misc.h)(0x4D783BB4)
+F (..\SRC\STM32F10x_LIB\src\stm32f10x_spi.c)(0x4D783BB4)(-c --cpu Cortex-M3 -g -O0 --apcs=interwork -I ..\SRC\Hardware\SPI -I ..\SRC\Hardware\delay -I ..\SRC\Hardware\SSD1331 -I ..\SRC\STM32F10x_LIB\CMSIS -I ..\SRC\STM32F10x_LIB\inc -I ..\SRC\USER -I ..\SRC\Hardware\Fonts-I.\RTE\_SSD1331_OLED-IC:\Keil_v5\ARM\PACK\ARM\CMSIS\5.4.0\CMSIS\Core\Include-IC:\Keil_v5\ARM\PACK\Keil\STM32F1xx_DFP\2.2.0\Device\Include-D__UVISION_VERSION="526" -D_RTE_ -DSTM32F10X_MD -DUSE_STDPERIPH_DRIVER -DSTM32F10X_HD -DINTERFACE_SPI-o ..\temp\stm32f10x_spi.o --omf_browse ..\temp\stm32f10x_spi.crf --depend ..\temp\stm32f10x_spi.d)
+I (..\SRC\STM32F10x_LIB\inc\stm32f10x_spi.h)(0x4D783BB4)
+I (..\SRC\STM32F10x_LIB\CMSIS\stm32f10x.h)(0x4D783CB4)
+I (..\SRC\STM32F10x_LIB\CMSIS\core_cm3.h)(0x4D523B58)
+I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x51C7B744)
+I (..\SRC\STM32F10x_LIB\CMSIS\system_stm32f10x.h)(0x4D783CAA)
+I (..\SRC\USER\stm32f10x_conf.h)(0x54913D00)
+I (..\SRC\STM32F10x_LIB\inc\stm32f10x_adc.h)(0x4D783BB4)
+I (..\SRC\STM32F10x_LIB\inc\stm32f10x_bkp.h)(0x4D783BB4)
+I (..\SRC\STM32F10x_LIB\inc\stm32f10x_exti.h)(0x4D783BB4)
+I (..\SRC\STM32F10x_LIB\inc\stm32f10x_gpio.h)(0x4D783BB4)
+I (..\SRC\STM32F10x_LIB\inc\stm32f10x_pwr.h)(0x4D783BB4)
+I (..\SRC\STM32F10x_LIB\inc\stm32f10x_rcc.h)(0x4D783BB4)
+I (..\SRC\STM32F10x_LIB\inc\stm32f10x_rtc.h)(0x4D783BB4)
+I (..\SRC\STM32F10x_LIB\inc\stm32f10x_tim.h)(0x4D783BB4)
+I (..\SRC\STM32F10x_LIB\inc\stm32f10x_usart.h)(0x4D783BB4)
+I (..\SRC\STM32F10x_LIB\inc\misc.h)(0x4D783BB4)
+F (..\SRC\USER\Config.c)(0x569C58BA)(-c --cpu Cortex-M3 -g -O0 --apcs=interwork -I ..\SRC\Hardware\SPI -I ..\SRC\Hardware\delay -I ..\SRC\Hardware\SSD1331 -I ..\SRC\STM32F10x_LIB\CMSIS -I ..\SRC\STM32F10x_LIB\inc -I ..\SRC\USER -I ..\SRC\Hardware\Fonts-I.\RTE\_SSD1331_OLED-IC:\Keil_v5\ARM\PACK\ARM\CMSIS\5.4.0\CMSIS\Core\Include-IC:\Keil_v5\ARM\PACK\Keil\STM32F1xx_DFP\2.2.0\Device\Include-D__UVISION_VERSION="526" -D_RTE_ -DSTM32F10X_MD -DUSE_STDPERIPH_DRIVER -DSTM32F10X_HD -DINTERFACE_SPI-o ..\temp\config.o --omf_browse ..\temp\config.crf --depend ..\temp\config.d)
+I (..\SRC\USER\LIB_Config.h)(0x569C594E)
+I (..\SRC\USER\MacroAndConst.h)(0x54AE44F8)
+I (C:\Keil_v5\ARM\ARMCC\include\stdio.h)(0x51C7B744)
+I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x51C7B744)
+I (C:\Keil_v5\ARM\ARMCC\include\stdbool.h)(0x51C7B744)
+I (..\SRC\USER\Config.h)(0x549CC81A)
+I (..\SRC\STM32F10x_LIB\CMSIS\stm32f10x.h)(0x4D783CB4)
+I (..\SRC\STM32F10x_LIB\CMSIS\core_cm3.h)(0x4D523B58)
+I (..\SRC\STM32F10x_LIB\CMSIS\system_stm32f10x.h)(0x4D783CAA)
+I (..\SRC\USER\stm32f10x_conf.h)(0x54913D00)
+I (..\SRC\STM32F10x_LIB\inc\stm32f10x_adc.h)(0x4D783BB4)
+I (..\SRC\STM32F10x_LIB\inc\stm32f10x_bkp.h)(0x4D783BB4)
+I (..\SRC\STM32F10x_LIB\inc\stm32f10x_exti.h)(0x4D783BB4)
+I (..\SRC\STM32F10x_LIB\inc\stm32f10x_gpio.h)(0x4D783BB4)
+I (..\SRC\STM32F10x_LIB\inc\stm32f10x_pwr.h)(0x4D783BB4)
+I (..\SRC\STM32F10x_LIB\inc\stm32f10x_rcc.h)(0x4D783BB4)
+I (..\SRC\STM32F10x_LIB\inc\stm32f10x_rtc.h)(0x4D783BB4)
+I (..\SRC\STM32F10x_LIB\inc\stm32f10x_spi.h)(0x4D783BB4)
+I (..\SRC\STM32F10x_LIB\inc\stm32f10x_tim.h)(0x4D783BB4)
+I (..\SRC\STM32F10x_LIB\inc\stm32f10x_usart.h)(0x4D783BB4)
+I (..\SRC\STM32F10x_LIB\inc\misc.h)(0x4D783BB4)
+I (..\SRC\Hardware\delay\delay.h)(0x545D89A2)
+I (..\SRC\Hardware\SPI\SPI.h)(0x54AA31E8)
+I (..\SRC\Hardware\SSD1331\SSD1331.h)(0x54C708A4)
+I (C:\Keil_v5\ARM\ARMCC\include\math.h)(0x51C7B744)
+I (C:\Keil_v5\ARM\ARMCC\include\stdlib.h)(0x51C7B744)
+I (..\SRC\Hardware\Fonts\Fonts.h)(0x54C7040A)
+F (..\SRC\USER\main.c)(0x5BDD975A)(-c --cpu Cortex-M3 -g -O0 --apcs=interwork -I ..\SRC\Hardware\SPI -I ..\SRC\Hardware\delay -I ..\SRC\Hardware\SSD1331 -I ..\SRC\STM32F10x_LIB\CMSIS -I ..\SRC\STM32F10x_LIB\inc -I ..\SRC\USER -I ..\SRC\Hardware\Fonts-I.\RTE\_SSD1331_OLED-IC:\Keil_v5\ARM\PACK\ARM\CMSIS\5.4.0\CMSIS\Core\Include-IC:\Keil_v5\ARM\PACK\Keil\STM32F1xx_DFP\2.2.0\Device\Include-D__UVISION_VERSION="526" -D_RTE_ -DSTM32F10X_MD -DUSE_STDPERIPH_DRIVER -DSTM32F10X_HD -DINTERFACE_SPI-o ..\temp\main.o --omf_browse ..\temp\main.crf --depend ..\temp\main.d)
+I (..\SRC\USER\LIB_Config.h)(0x569C594E)
+I (..\SRC\USER\MacroAndConst.h)(0x54AE44F8)
+I (C:\Keil_v5\ARM\ARMCC\include\stdio.h)(0x51C7B744)
+I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x51C7B744)
+I (C:\Keil_v5\ARM\ARMCC\include\stdbool.h)(0x51C7B744)
+I (..\SRC\USER\Config.h)(0x549CC81A)
+I (..\SRC\STM32F10x_LIB\CMSIS\stm32f10x.h)(0x4D783CB4)
+I (..\SRC\STM32F10x_LIB\CMSIS\core_cm3.h)(0x4D523B58)
+I (..\SRC\STM32F10x_LIB\CMSIS\system_stm32f10x.h)(0x4D783CAA)
+I (..\SRC\USER\stm32f10x_conf.h)(0x54913D00)
+I (..\SRC\STM32F10x_LIB\inc\stm32f10x_adc.h)(0x4D783BB4)
+I (..\SRC\STM32F10x_LIB\inc\stm32f10x_bkp.h)(0x4D783BB4)
+I (..\SRC\STM32F10x_LIB\inc\stm32f10x_exti.h)(0x4D783BB4)
+I (..\SRC\STM32F10x_LIB\inc\stm32f10x_gpio.h)(0x4D783BB4)
+I (..\SRC\STM32F10x_LIB\inc\stm32f10x_pwr.h)(0x4D783BB4)
+I (..\SRC\STM32F10x_LIB\inc\stm32f10x_rcc.h)(0x4D783BB4)
+I (..\SRC\STM32F10x_LIB\inc\stm32f10x_rtc.h)(0x4D783BB4)
+I (..\SRC\STM32F10x_LIB\inc\stm32f10x_spi.h)(0x4D783BB4)
+I (..\SRC\STM32F10x_LIB\inc\stm32f10x_tim.h)(0x4D783BB4)
+I (..\SRC\STM32F10x_LIB\inc\stm32f10x_usart.h)(0x4D783BB4)
+I (..\SRC\STM32F10x_LIB\inc\misc.h)(0x4D783BB4)
+I (..\SRC\Hardware\delay\delay.h)(0x545D89A2)
+I (..\SRC\Hardware\SPI\SPI.h)(0x54AA31E8)
+I (..\SRC\Hardware\SSD1331\SSD1331.h)(0x54C708A4)
+I (C:\Keil_v5\ARM\ARMCC\include\math.h)(0x51C7B744)
+I (C:\Keil_v5\ARM\ARMCC\include\stdlib.h)(0x51C7B744)
+I (..\SRC\Hardware\Fonts\Fonts.h)(0x54C7040A)
+F (..\SRC\USER\stm32f10x_it.c)(0x53B66E3C)(-c --cpu Cortex-M3 -g -O0 --apcs=interwork -I ..\SRC\Hardware\SPI -I ..\SRC\Hardware\delay -I ..\SRC\Hardware\SSD1331 -I ..\SRC\STM32F10x_LIB\CMSIS -I ..\SRC\STM32F10x_LIB\inc -I ..\SRC\USER -I ..\SRC\Hardware\Fonts-I.\RTE\_SSD1331_OLED-IC:\Keil_v5\ARM\PACK\ARM\CMSIS\5.4.0\CMSIS\Core\Include-IC:\Keil_v5\ARM\PACK\Keil\STM32F1xx_DFP\2.2.0\Device\Include-D__UVISION_VERSION="526" -D_RTE_ -DSTM32F10X_MD -DUSE_STDPERIPH_DRIVER -DSTM32F10X_HD -DINTERFACE_SPI-o ..\temp\stm32f10x_it.o --omf_browse ..\temp\stm32f10x_it.crf --depend ..\temp\stm32f10x_it.d)
+I (..\SRC\USER\stm32f10x_it.h)(0x4D99A59E)
+I (..\SRC\STM32F10x_LIB\CMSIS\stm32f10x.h)(0x4D783CB4)
+I (..\SRC\STM32F10x_LIB\CMSIS\core_cm3.h)(0x4D523B58)
+I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x51C7B744)
+I (..\SRC\STM32F10x_LIB\CMSIS\system_stm32f10x.h)(0x4D783CAA)
+I (..\SRC\USER\stm32f10x_conf.h)(0x54913D00)
+I (..\SRC\STM32F10x_LIB\inc\stm32f10x_adc.h)(0x4D783BB4)
+I (..\SRC\STM32F10x_LIB\inc\stm32f10x_bkp.h)(0x4D783BB4)
+I (..\SRC\STM32F10x_LIB\inc\stm32f10x_exti.h)(0x4D783BB4)
+I (..\SRC\STM32F10x_LIB\inc\stm32f10x_gpio.h)(0x4D783BB4)
+I (..\SRC\STM32F10x_LIB\inc\stm32f10x_pwr.h)(0x4D783BB4)
+I (..\SRC\STM32F10x_LIB\inc\stm32f10x_rcc.h)(0x4D783BB4)
+I (..\SRC\STM32F10x_LIB\inc\stm32f10x_rtc.h)(0x4D783BB4)
+I (..\SRC\STM32F10x_LIB\inc\stm32f10x_spi.h)(0x4D783BB4)
+I (..\SRC\STM32F10x_LIB\inc\stm32f10x_tim.h)(0x4D783BB4)
+I (..\SRC\STM32F10x_LIB\inc\stm32f10x_usart.h)(0x4D783BB4)
+I (..\SRC\STM32F10x_LIB\inc\misc.h)(0x4D783BB4)

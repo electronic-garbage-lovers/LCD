@@ -1,0 +1,5 @@
+Added Component: Designator=C1(C0805)
+Added Component: Designator=JLX12864(PCBComponent_1)
+Added Member To Class: ClassName=Sheet1 Member=Component C1 Cap Pol3
+Added Member To Class: ClassName=Sheet1 Member=Component JLX12864 Component_1
+Added Room: Name=Sheet1

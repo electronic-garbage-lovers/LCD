@@ -1,0 +1,1 @@
+空 空 复位 地 数据 时钟 vdd vref iref vcc 空 空

@@ -1,0 +1,16 @@
+--cpu Cortex-M3
+".\objects\main.o"
+".\objects\delay.o"
+".\objects\stm32f10xgpioinit.o"
+".\objects\gimage_test.o"
+".\objects\stm32f10x_afio.o"
+".\objects\cog_c177mvhg_03.o"
+".\objects\ascii_font_v8x8.o"
+".\objects\ascii_font_v8x16.o"
+".\objects\core_cm3.o"
+".\objects\startup_stm32f10x_hd.o"
+".\objects\system_stm32f10x.o"
+--strict --scatter ".\Objects\CSTNLCD.sct"
+--summary_stderr --info summarysizes --map --load_addr_map_info --xref --callgraph --symbols
+--info sizes --info totals --info unused --info veneers
+--list ".\Listings\CSTNLCD.map" -o .\Objects\CSTNLCD.axf

@@ -1,0 +1,42 @@
+Added Component: Designator=*(PCBComponent_1)
+Added Component: Designator=C1(C0805)
+Added Component: Designator=C2(C0805)
+Added Component: Designator=C3(C0805)
+Added Component: Designator=P1(HDR1X7)
+Added Component: Designator=R1(J1-0603)
+Added Pin To Net: NetName=CS0 Pin=*-1
+Added Pin To Net: NetName=RST Pin=*-2
+Added Pin To Net: NetName=CD Pin=*-3
+Added Pin To Net: NetName=SCK Pin=*-4
+Added Pin To Net: NetName=SDA Pin=*-5
+Added Pin To Net: NetName=VCC Pin=*-6
+Added Pin To Net: NetName=GND Pin=*-7
+Added Pin To Net: NetName=Net*_8 Pin=*-8
+Added Pin To Net: NetName=Net*_9 Pin=*-9
+Added Pin To Net: NetName=Net*_10 Pin=*-10
+Added Pin To Net: NetName=Net*_11 Pin=*-11
+Added Pin To Net: NetName=Net*_12 Pin=*-12
+Added Pin To Net: NetName=VCC Pin=*-13
+Added Pin To Net: NetName=Net*_14 Pin=*-14
+Added Pin To Net: NetName=Net*_9 Pin=C1-1
+Added Pin To Net: NetName=Net*_8 Pin=C1-2
+Added Pin To Net: NetName=Net*_11 Pin=C2-1
+Added Pin To Net: NetName=Net*_10 Pin=C2-2
+Added Pin To Net: NetName=GND Pin=C3-1
+Added Pin To Net: NetName=Net*_12 Pin=C3-2
+Added Pin To Net: NetName=CS0 Pin=P1-1
+Added Pin To Net: NetName=RST Pin=P1-2
+Added Pin To Net: NetName=CD Pin=P1-3
+Added Pin To Net: NetName=SCK Pin=P1-4
+Added Pin To Net: NetName=SDA Pin=P1-5
+Added Pin To Net: NetName=VCC Pin=P1-6
+Added Pin To Net: NetName=GND Pin=P1-7
+Added Pin To Net: NetName=GND Pin=R1-1
+Added Pin To Net: NetName=Net*_14 Pin=R1-2
+Added Member To Class: ClassName=Sheet1 Member=Component * Component_1
+Added Member To Class: ClassName=Sheet1 Member=Component C1 Cap Pol3
+Added Member To Class: ClassName=Sheet1 Member=Component C2 Cap Pol3
+Added Member To Class: ClassName=Sheet1 Member=Component C3 Cap Pol3
+Added Member To Class: ClassName=Sheet1 Member=Component P1 Header 7
+Added Member To Class: ClassName=Sheet1 Member=Component R1 Res3
+Added Room: Name=Sheet1

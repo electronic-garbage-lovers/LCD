@@ -1,0 +1,333 @@
+C51 COMPILER V9.01   MAIN                                                                  09/20/2018 18:08:39 PAGE 1   
+
+
+C51 COMPILER V9.01, COMPILATION OF MODULE MAIN
+OBJECT MODULE PLACED IN main.OBJ
+COMPILER INVOKED BY: C:\Keil51\C51\BIN\C51.EXE main.c BROWSE DEBUG OBJECTEXTEND
+
+line level    source
+
+   1          #include "stc8.h"   //死特惨的STC8A4K32S2A12
+   2          
+   3          #define uchar unsigned char
+   4          #define uint unsigned int
+   5          
+   6           uchar code LCD_DATA[1717] = {    //全屏图片：让老王赶紧上新
+   7          0X00,0X00,0X00,0X00,0X00,0X00,0X00,0X00,0X00,0X00,0X00,0X00,0X00,0X00,0X00,0X00,
+   8          0X00,0X00,0X00,0X00,0X00,0X00,0X00,0X00,0X00,0X00,0X00,0X00,0X0C,0XFC,0X00,0X00,
+   9          0X00,0X00,0XC0,0X0F,0X00,0X00,0X00,0X00,0X00,0X00,0X00,0X00,0XC0,0X0F,0XFC,0X00,
+  10          0X00,0X00,0X00,0XC0,0X0F,0X00,0X00,0X00,0X00,0X00,0X00,0X00,0X00,0X00,0X3F,0XFC,
+  11          0XF0,0X03,0X00,0X00,0XC0,0X0F,0X00,0X00,0X00,0X00,0X00,0X00,0X00,0X00,0X00,0X3F,
+  12          0XFC,0XF0,0X03,0X00,0X00,0XC0,0X0F,0X00,0X00,0X00,0X00,0X00,0X00,0X00,0X00,0X00,
+  13          0X3F,0XFC,0XF0,0X03,0X00,0X00,0XC0,0X0F,0X00,0X00,0X00,0X00,0X00,0X00,0X00,0X00,
+  14          0XFC,0XFF,0XFC,0XF0,0X03,0X00,0X00,0XC0,0X0F,0X00,0X00,0X00,0X00,0X00,0X00,0X00,
+  15          0X00,0XFF,0XFF,0XFC,0XF0,0X03,0X00,0X00,0XC0,0X0F,0X00,0X00,0X00,0X00,0X00,0X00,
+  16          0X00,0XC0,0XFF,0XFF,0XFF,0XFF,0X3F,0X00,0X00,0XC0,0XFF,0XFF,0XFF,0XFF,0X3F,0X00,
+  17          0X00,0X00,0XC0,0XCF,0XFF,0XFF,0XFF,0X3F,0X00,0X00,0XC0,0XFF,0XFF,0XFF,0XFF,0X3F,
+  18          0X00,0X00,0X00,0XC0,0XCF,0XCF,0XFF,0XFF,0X3F,0X00,0X00,0XC0,0XFF,0XFF,0XFF,0XFF,
+  19          0X3F,0X00,0X00,0X00,0XC0,0XCF,0X0F,0XFF,0XF0,0X03,0X00,0X00,0XC0,0XFF,0XFF,0XFF,
+  20          0XFF,0X3F,0X00,0X00,0X00,0XC0,0X0F,0X3F,0XFF,0XF0,0X03,0X00,0X00,0XC0,0X0F,0X00,
+  21          0XF0,0X03,0X00,0X00,0X00,0X00,0XC0,0X0F,0X3F,0XFC,0XF3,0X03,0X00,0X00,0XC0,0X0F,
+  22          0X00,0XF0,0X03,0X00,0X00,0X00,0X00,0XC0,0X0F,0X3F,0XFC,0XFF,0X03,0X00,0X00,0XC0,
+  23          0X0F,0X00,0XF0,0X03,0X00,0X00,0X00,0X00,0XC0,0X0F,0X3F,0XFC,0X0F,0X00,0X00,0X00,
+  24          0XC0,0X0F,0X00,0XF0,0X03,0X00,0X00,0X00,0X00,0XC0,0X0F,0XFF,0XFC,0X3F,0X00,0X00,
+  25          0X00,0XC0,0X0F,0X00,0XF0,0X03,0X00,0X00,0X00,0X00,0XC0,0XFF,0XFC,0XFC,0XFC,0X00,
+  26          0X00,0X00,0XC0,0X0F,0X00,0XF0,0X03,0X00,0X00,0X00,0X00,0XC0,0XFF,0X3C,0XFC,0XF0,
+  27          0X03,0X00,0X00,0XC0,0X0F,0X00,0XF0,0X03,0X00,0X00,0X00,0X00,0X00,0X3F,0X0C,0XFC,
+  28          0XF0,0X00,0X00,0X00,0XC0,0X0F,0X00,0X00,0X00,0X00,0X00,0X00,0X00,0X00,0X00,0X00,
+  29          0XFC,0XC0,0X00,0X00,0X00,0X00,0X00,0X00,0X00,0X00,0X00,0X00,0X00,0X00,0X00,0X00,
+  30          0X00,0XFC,0X00,0X00,0X00,0X00,0X00,0X0C,0X00,0XF0,0X00,0X00,0X00,0X00,0X00,0X00,
+  31          0X00,0X00,0X00,0X00,0X00,0X00,0X00,0X00,0XFF,0XF0,0XF0,0XC0,0X03,0X00,0X00,0X00,
+  32          0XC0,0X0F,0X00,0X00,0X00,0X00,0X00,0X00,0X00,0XFF,0XF3,0XF0,0XCF,0X03,0X00,0X00,
+  33          0X00,0XC0,0X0F,0XC0,0X0F,0XC0,0X0F,0X00,0X00,0XF0,0XC3,0XF3,0XF0,0XFF,0X03,0X00,
+  34          0X00,0X00,0XC0,0X0F,0XC0,0X0F,0XC0,0X0F,0X00,0X00,0XF0,0X03,0XF0,0XF0,0XCF,0X3F,
+  35          0X00,0X00,0X00,0XC0,0X0F,0XC0,0X0F,0XC0,0X0F,0X00,0X00,0XF0,0XFF,0XFF,0XFF,0XC0,
+  36          0X3F,0X00,0X00,0X00,0XC0,0X0F,0XC0,0X0F,0XC0,0X0F,0X00,0X00,0XC0,0XFF,0XFF,0XFF,
+  37          0XC0,0X3F,0X00,0X00,0X00,0XC0,0X0F,0XC0,0X0F,0XC0,0X0F,0X00,0X00,0X00,0XC0,0XF0,
+  38          0XF0,0XFF,0X03,0X00,0X00,0X00,0XC0,0X0F,0XC0,0X0F,0XC0,0X0F,0X00,0X00,0X00,0XF0,
+  39          0XF3,0XF0,0XFF,0X03,0X00,0X00,0X00,0XC0,0X0F,0XC0,0X0F,0XC0,0X0F,0X00,0X00,0X00,
+  40          0XFC,0XF3,0XF0,0XCC,0X03,0X00,0X00,0X00,0XC0,0XFF,0XFF,0XFF,0XFF,0X0F,0X00,0X00,
+  41          0XC0,0X33,0XF0,0XF0,0XC0,0X03,0X00,0X00,0X00,0XC0,0XFF,0XFF,0XFF,0XFF,0X0F,0X00,
+  42          0X00,0XF0,0XFF,0X00,0X00,0X00,0X00,0X00,0X00,0X00,0XC0,0XFF,0XFF,0XFF,0XFF,0X0F,
+  43          0X00,0X00,0XC0,0XFF,0XFF,0XFF,0XFF,0X03,0X00,0X00,0X00,0XC0,0X0F,0XC0,0X0F,0XC0,
+  44          0X0F,0X00,0X00,0X00,0XFC,0XFF,0XFF,0XFF,0X03,0X00,0X00,0X00,0XC0,0X0F,0XC0,0X0F,
+  45          0XC0,0X0F,0X00,0X00,0X00,0X00,0XFC,0XFF,0XFF,0X03,0X00,0X00,0X00,0XC0,0X0F,0XC0,
+  46          0X0F,0XC0,0X0F,0X00,0X00,0X00,0X00,0X00,0XFC,0XC0,0X0F,0X00,0X00,0X00,0XC0,0X0F,
+  47          0XC0,0X0F,0XC0,0X0F,0X00,0X00,0XF0,0XFF,0XFF,0XFF,0XC0,0X0F,0X00,0X00,0X00,0XC0,
+  48          0X0F,0XC0,0X0F,0XC0,0X0F,0X00,0X00,0XF0,0XFF,0XFF,0XFF,0XC0,0X0F,0X00,0X00,0X00,
+  49          0XC0,0X0F,0XC0,0X0F,0XC0,0X0F,0X00,0X00,0XF0,0XFF,0XFF,0XFF,0X00,0X3F,0X00,0X00,
+  50          0X00,0XC0,0X0F,0XC0,0X0F,0XC0,0X0F,0X00,0X00,0X00,0X00,0X00,0XFC,0X00,0X3F,0X00,
+  51          0X00,0X00,0XC0,0X0F,0X00,0X00,0X00,0X00,0X00,0X00,0X00,0X00,0X00,0XFC,0X00,0X00,
+  52          0X00,0X00,0X00,0X00,0X00,0X00,0X00,0X00,0X00,0X00,0X00,0X00,0X00,0X00,0X00,0X00,
+  53          0X00,0X00,0X00,0X00,0X00,0X00,0X00,0XFC,0X00,0X00,0X00,0X00,0XF0,0XFF,0XFF,0X00,
+  54          0X00,0X00,0X00,0X00,0X00,0XC0,0XFF,0X0F,0XFC,0XF0,0X03,0X00,0X00,0XF0,0XFF,0XFF,
+  55          0X00,0X00,0X00,0X00,0X00,0X00,0XF0,0XFF,0XFF,0XFC,0XF0,0X03,0X00,0X00,0XF0,0XFF,
+C51 COMPILER V9.01   MAIN                                                                  09/20/2018 18:08:39 PAGE 2   
+
+  56          0XFF,0XF0,0XFF,0X0F,0X00,0X00,0X00,0X00,0XFC,0XFF,0XFC,0XF0,0X03,0X00,0X00,0XC0,
+  57          0X0F,0XFC,0XF0,0XFF,0X0F,0X00,0X00,0X00,0X00,0X3F,0X00,0XFC,0XFF,0X3F,0X00,0X00,
+  58          0XC0,0X0F,0XFC,0XF0,0XFF,0X0F,0X00,0X00,0X00,0X00,0XFF,0XFF,0XFF,0XFF,0X3F,0X00,
+  59          0X00,0XC0,0X0F,0XFC,0XF0,0XC3,0X0F,0X00,0X00,0X00,0XC0,0XFF,0XFF,0XFF,0XFF,0X3F,
+  60          0X00,0X00,0XF0,0XFF,0XFF,0XF0,0XC3,0X0F,0X00,0X00,0X00,0XC0,0XFF,0XFF,0XFF,0XF0,
+  61          0X03,0X00,0X00,0XF0,0XFF,0XFF,0XF0,0XC3,0X0F,0X00,0X00,0X00,0XC0,0X0F,0X3F,0XFC,
+  62          0XF0,0X03,0X00,0X00,0XF0,0XFF,0XFF,0XF0,0XC3,0X0F,0X00,0X00,0X00,0XC0,0X0F,0X3F,
+  63          0XFC,0XF0,0X03,0X00,0X00,0X00,0X00,0X00,0XF0,0XC3,0X0F,0X00,0X00,0X00,0XC0,0X0F,
+  64          0X00,0X3F,0X00,0X00,0X00,0X00,0XF0,0XFF,0XFF,0XF0,0XC3,0X0F,0X00,0X00,0X00,0XC0,
+  65          0X0F,0X00,0X3F,0XC0,0X0F,0X00,0X00,0XF0,0XFF,0XFF,0XF0,0XC3,0X0F,0X00,0X00,0X00,
+  66          0XC0,0X0F,0X00,0X3F,0XC0,0X0F,0X00,0X00,0XF0,0XFF,0XFF,0XF0,0XC3,0X0F,0X00,0X00,
+  67          0X00,0XC0,0X0F,0X00,0X3F,0XC0,0X0F,0X00,0X00,0XC0,0X0F,0XFC,0XF0,0XC3,0X0F,0X00,
+  68          0X00,0X00,0XC0,0XCF,0XFF,0XFF,0XFF,0X0F,0X00,0X00,0XC0,0X0F,0XFC,0XF0,0XFF,0X0F,
+  69          0X00,0X00,0X00,0XC0,0XCF,0XFF,0XFF,0XFF,0X0F,0X00,0X00,0XC0,0X0F,0XFC,0XF0,0XFF,
+  70          0X0F,0X00,0X00,0X00,0XC0,0XCF,0XFF,0XFF,0XFF,0X0F,0X00,0X00,0XF0,0XFF,0XFF,0XF0,
+  71          0XFF,0X0F,0X00,0X00,0X00,0XC0,0X0F,0X00,0X3F,0XC0,0X0F,0X00,0X00,0XF0,0XFF,0XFF,
+  72          0X00,0X00,0X00,0X00,0X00,0X00,0XC0,0X0F,0X00,0X3F,0XC0,0X0F,0X00,0X00,0XF0,0XFF,
+  73          0XFF,0X00,0X00,0X00,0X00,0X00,0X00,0XC0,0X0F,0X00,0X3F,0XC0,0X0F,0X00,0X00,0X00,
+  74          0X00,0X00,0X00,0X00,0X00,0X00,0X00,0X00,0X00,0X0C,0X00,0X00,0X00,0X00,0X00,0X00,
+  75          0X00,0X00,0X00,0X00,0X00,0X00,0X00,0X00,0X00,0X00,0X00,0X00,0X00,0X00,0X00,0X00,
+  76          0X00,0X00,0X00,0X00,0X00,0X00,0X00,0X00,0X00,0X00,0XC0,0X00,0X00,0XF0,0XFF,0X0F,
+  77          0X00,0X00,0X00,0X00,0X00,0X00,0X00,0X00,0X00,0X00,0X00,0XF0,0XC3,0X03,0XF0,0XFF,
+  78          0X0F,0X00,0X00,0X00,0X00,0X00,0X00,0X00,0X00,0X00,0X00,0X00,0XC0,0XCF,0XF3,0XF0,
+  79          0XFF,0X0F,0X00,0X00,0X00,0X00,0X00,0X00,0X00,0X00,0X00,0X00,0X00,0XC0,0XCF,0XFF,
+  80          0X03,0X00,0X00,0X00,0X00,0X00,0X00,0X00,0X00,0X00,0X00,0X00,0X00,0X00,0X00,0XFF,
+  81          0XFF,0XF3,0XFF,0X3F,0X00,0X00,0X00,0X00,0X00,0X00,0X00,0X00,0X00,0X00,0X00,0X00,
+  82          0XFF,0XFF,0XF3,0XFF,0X3F,0X00,0X00,0X00,0X00,0X00,0X00,0X00,0X00,0X00,0X00,0X00,
+  83          0XF0,0XC3,0XFF,0XFF,0XFF,0X3F,0X00,0X00,0X00,0X00,0X00,0X00,0X00,0X00,0X00,0X00,
+  84          0X00,0XF0,0XC3,0XFF,0XFF,0X00,0X00,0X00,0X00,0X00,0X00,0X00,0X00,0X00,0X00,0X00,
+  85          0X00,0X00,0XF0,0XFF,0XFC,0XFC,0X03,0X0F,0X00,0X00,0X00,0X00,0X00,0X00,0X00,0X00,
+  86          0X00,0X00,0X00,0XF0,0XFF,0XFC,0XFC,0XF3,0X0F,0X00,0X00,0X00,0X00,0X00,0X00,0X00,
+  87          0X00,0X00,0X00,0X00,0XC0,0XFF,0XFC,0XF0,0XFF,0X0F,0X00,0X00,0X00,0X00,0X00,0X00,
+  88          0X00,0X00,0X00,0X00,0X00,0X00,0XC0,0XF0,0XC0,0X3F,0X0F,0X00,0X00,0X00,0X00,0X00,
+  89          0X00,0X00,0X00,0X00,0X00,0X00,0X00,0XC3,0XF0,0XC3,0X0F,0X0F,0X00,0X00,0X00,0X00,
+  90          0X00,0X00,0X00,0X00,0X00,0X00,0X00,0X00,0XCF,0XFC,0XC3,0X0F,0X0F,0X00,0X00,0X00,
+  91          0X00,0X00,0X00,0X00,0X00,0X00,0X00,0X00,0XC0,0XCF,0XFF,0XC0,0X3F,0X0F,0X00,0X00,
+  92          0X00,0X00,0X00,0X00,0X00,0X00,0X00,0X00,0X00,0XC0,0XC3,0X0F,0XC0,0XFF,0X0F,0X00,
+  93          0X00,0X00,0X00,0X00,0X00,0X00,0X00,0X00,0X00,0X00,0XC0,0XC3,0X03,0XF0,0XF3,0X0F,
+  94          0X00,0X00,0X00,0X00,0X00,0X00,0X00,0X00,0X00,0X00,0X00,0XF0,0XF3,0X03,0XF0,0XC0,
+  95          0X0F,0X00,0X00,0X00,0X00,0X00,0X00,0X00,0X00,0X00,0X00,0X00,0XC0,0XC0,0X00,0XF0,
+  96          0X00,0X00,0X00,0X00,0X00,0X00,0X00,0X00,0X00,0X00,0X00,0X00,0X00,0X00,0X00,0X00,
+  97          0X00,0X00,0X00,0X00,0X00,0X00,0X00,0X00,0X00,0X00,0X00,0X00,0X00,0X00,0X00,0X00,
+  98          0X00,0X00,0X00,0X00,0X00,0X00,0X00,0X00,0X00,0X00,0X00,0X00,0X00,0X00,0X00,0X00,
+  99          0X00,0X00,0X00,0X00,0X00,0X00,0X00,0X00,0X00,0X00,0X00,0X00,0X00,0X00,0X00,0X00,
+ 100          0X00,0X00,0X00,0X00,0X00,0X00,0X00,0X00,0X00,0X00,0X00,0X00,0X00,0X00,0X00,0X00,
+ 101          0X00,0X00,0X00,0X00,0X00,0X00,0X00,0X00,0X00,0X00,0X00,0X00,0X00,0X00,0X00,0X00,
+ 102          0X00,0X00,0X00,0X00,0X00,0X00,0X00,0X00,0X00,0X00,0X00,0X00,0X00,0X00,0X00,0X00,
+ 103          0X00,0X00,0X00,0X00,0X00,0X00,0X00,0X00,0X00,0X00,0X00,0X00,0X00,0X00,0X00,0X00,
+ 104          0X00,0X00,0X00,0X00,0X00,0X00,0X00,0X00,0X00,0X00,0X00,0X00,0X00,0X00,0X00,0X00,
+ 105          0X00,0X00,0X00,0X00,0X00,0X00,0X00,0X00,0X00,0X00,0X00,0X00,0X00,0X00,0X00,0X00,
+ 106          0X00,0X00,0X00,0X00,0X00,0X00,0X00,0X00,0X00,0X00,0X00,0X00,0X00,0X00,0X00,0X00,
+ 107          0X00,0X00,0X00,0X00,0X00,0X00,0X00,0X00,0X00,0X00,0X00,0X00,0X00,0X00,0X00,0X00,
+ 108          0X00,0X00,0X00,0X00,0X00,0X00,0X00,0X00,0X00,0X00,0X00,0X00,0X00,0X00,0X00,0X00,
+ 109          0X00,0X00,0X00,0X00,0X00,0X00,0X00,0X00,0X00,0X00,0X00,0X00,0X00,0X00,0X00,0X00,
+ 110          0X00,0X00,0X00,0X00,0X00,0X00,0X00,0X00,0X00,0X00,0X00,0X00,0X00,0X00,0X00,0X00,
+ 111          0X00,0X00,0X00,0X00,0X00,0X00,0X00,0X00,0X00,0X00,0X00,0X00,0X00,0X00,0X00,0X00,
+ 112          0X00,0X00,0X00,0X00,0X00,0X00,0X00,0X00,0X00,0X00,0X00,0X00,0X00,0X00,0X00,0X00,
+ 113          0X00,0X00,0X00,0X00,0X00,0X00,0X00,0X00,0X00,0X00,0X00,0X00,0X00,0X00,0X00,0X00,
+ 114          0X00,0X00,0X00,0X00,0X00,
+ 115          };
+ 116          uchar code LCD_INT[74] =          //LCD的初始化指令，具体含义写在后面
+ 117                  {
+C51 COMPILER V9.01   MAIN                                                                  09/20/2018 18:08:39 PAGE 3   
+
+ 118                          0X78,0X80,      //选择地址,0X3C，加上W/R为0X78
+ 119                          0X01,0X80,      //进0页
+ 120                          0X09,0X80,      //选1页PS:选页指令在0页。
+ 121                          0X06,0X80,      //选择正常显示模式
+ 122                          0X12,0X80,      //选择偏置模式
+ 123                          0X40,0X80,      //选择前8行的显示模式？？
+ 124                          0X01,0X80,      //回0页
+ 125                          0X16,0X80,      //选择垂直模式，掉电模式
+ 126                          0x20,0x80,      //选择Y地址，默认为0，可不设置。
+ 127                          0X40,0X80,      //选择X地址，默认为0，可不设置.
+ 128                          0X0C,0X80,      //翻到4页
+ 129                          0X05,0X80,      //打开显示和直接驱动模式（电压倍增器）
+ 130                          0X01,0X80,      //回0页
+ 131                          0X0A,0X80,      //选2页
+ 132                          0X08,0X80,      //设定2倍VLCD电压
+ 133                          0X12,0X80,      //设定温度系数2
+ 134                          0X04,0X80,      //设定VLCD为低，并关闭高压发生器
+ 135              0XC8,0X80,  //设定VLCD电压 ~=7.74V  //4.5+72*0.045
+ 136                          0X01,0X80,      //回0页
+ 137                          0X0B,0X80,      //翻到3页
+ 138                          0X40,0X80,      //选择灰度0（寄存器）
+ 139                          0X80,0X80,      //灰度0设为0
+ 140                    0X41,0X80,    //选额灰度1
+ 141                          0X94,0X80,      //灰度1设为20
+ 142                          0X42,0X80,      //选择灰度2
+ 143                          0XA8,0X80,      //灰度2设为40
+ 144                          0X43,0X80,      //选择灰度3
+ 145                          0XBF,0X80,      //灰度3设为63
+ 146                          0X01,0X80,      //回0页
+ 147                          0X0A,0X80,      //选择2页
+ 148                          0X05,0X80,      //设定VLCD为低，并打开高压发生器
+ 149                          0X01,0X80,      //回0页
+ 150                          0X12,0X80,      //打开操作模式，设定垂直模式 ，交换MSB和LSB 0X12:不交换MSB和LSB
+ 151                          0X0A,0X80,      //翻到2页
+ 152                          0X09,0X80,      //设定VLCD为3X
+ 153                          0X0A,0X80,      //设定VLCD为4X
+ 154                          0X0B,0X40,      //设定VLCD为5x，X040：后面开始写DDRAM显示数据
+ 155                  };
+ 156                  
+ 157          //delay ----------------------------------------------------------------------
+ 158          void delayus()
+ 159          {
+ 160   1              uchar i=6;
+ 161   1              while(i--);
+ 162   1      }
+ 163          
+ 164          void delayms()
+ 165          {
+ 166   1              uchar i, j;
+ 167   1              i = 32;
+ 168   1              j = 40;
+ 169   1              while (j--)
+ 170   1              {       while (i--);
+ 171   2              }
+ 172   1              }
+ 173          
+ 174          
+ 175          //I2C init ----------------------------------------------------------------------
+ 176          sbit I2CRST = P7^5; //定义I2C引脚
+ 177          sbit SCL =P7^7;
+ 178          sbit SDA = P7^6;
+ 179          
+C51 COMPILER V9.01   MAIN                                                                  09/20/2018 18:08:39 PAGE 4   
+
+ 180          void I2C_SOFT_START() //软件模拟I2C 开始信号
+ 181          {
+ 182   1              SDA = 1;
+ 183   1              delayus();
+ 184   1              SCL = 1;
+ 185   1              delayus();
+ 186   1              SDA = 0;
+ 187   1              delayus();
+ 188   1              SCL     =       0;
+ 189   1              SDA     = 1;
+ 190   1      }
+ 191          
+ 192          void I2C_SOFT_STOP() //软件模拟I2C 停止信号
+ 193          {
+ 194   1              SDA = 0;
+ 195   1              delayus();
+ 196   1              SCL = 1;
+ 197   1              delayus();
+ 198   1              SDA = 1;
+ 199   1              delayus();
+ 200   1              SCL     =       0;
+ 201   1              SDA     = 1;
+ 202   1      }
+ 203          
+ 204          
+ 205          void I2C_SOFT_SEND(uchar S_SND)   //软件模拟I2C，写1字节数据
+ 206          {
+ 207   1              uchar i,SOFT_ACK,SND;
+ 208   1              SOFT_ACK = 1;
+ 209   1      while (SOFT_ACK)        
+ 210   1      {
+ 211   2              SND = S_SND;
+ 212   2       for (i=8;i!=0;i--)
+ 213   2              {
+ 214   3                      if(SND & 0X80)
+ 215   3                              SDA = 1;
+ 216   3                      else SDA = 0;
+ 217   3                      SND <<=1;
+ 218   3                      delayus();
+ 219   3      //              delayus();
+ 220   3                      SCL = 1;
+ 221   3                      delayus();
+ 222   3      //              delayus();
+ 223   3                      SCL=0;
+ 224   3                      delayus();
+ 225   3              }
+ 226   2                      SDA =1;
+ 227   2                      delayus();
+ 228   2                      SCL = 1;
+ 229   2                      if(~SDA)
+ 230   2                      {
+ 231   3                              delayus();  //貌似少了这个延时，有时候不能顺利初始化
+ 232   3                              SOFT_ACK = 0; //判断是否重发
+ 233   3                      }SCL=0;
+ 234   2      }
+ 235   1      }
+ 236          
+ 237          //LCD INT ------------------------------------------------------
+ 238          void LCD_INIT()
+ 239          {
+ 240   1              uint num;
+ 241   1              I2CRST = 0;                                             //RST腿拉低
+C51 COMPILER V9.01   MAIN                                                                  09/20/2018 18:08:39 PAGE 5   
+
+ 242   1              delayms();
+ 243   1              I2CRST = 1;
+ 244   1        delayms();
+ 245   1              delayms();
+ 246   1              delayms();
+ 247   1              delayms();
+ 248   1              I2C_SOFT_START();                       //发送开始信号
+ 249   1                      for(num=0;num<=74;num++)
+ 250   1                      {
+ 251   2                              I2C_SOFT_SEND(LCD_INT[num]);
+ 252   2      
+ 253   2                      }                                                                               
+ 254   1              }
+ 255          
+ 256          void LCD_TEST1()        //连续写屏
+ 257          {
+ 258   1              uint num;
+ 259   1                              for(num=0;num<=1717;num++)
+ 260   1                      {
+ 261   2                              I2C_SOFT_SEND(LCD_DATA[num]);
+ 262   2      
+ 263   2                      }       
+ 264   1              }
+ 265          
+ 266          
+ 267          void LCD_SET_XY(uchar x,y) //设定在X,Y位置写数据
+ 268          {
+ 269   1              uchar i;
+ 270   1      
+ 271   1      I2C_SOFT_STOP();                                //芯片没有返回指令列表的指令，SO，结束I2C，再打开。
+ 272   1              delayus();
+ 273   1      I2C_SOFT_START();       
+ 274   1      
+ 275   1      I2C_SOFT_SEND(0X78);    //选地址
+ 276   1      I2C_SOFT_SEND(0X80);    //这个蛋疼的芯片，每次写一条指令都要说明下一条是指令还是数据，所以这么多0X80。
+ 277   1      I2C_SOFT_SEND(0X01);    //选页指令
+ 278   1      I2C_SOFT_SEND(0X80);    
+ 279   1      I2C_SOFT_SEND(0X040|y); //设置Y地址，（0-16）
+ 280   1      I2C_SOFT_SEND(0X80);            
+ 281   1      I2C_SOFT_SEND(0X80|x);  //设置X地址，   （0-100）
+ 282   1      I2C_SOFT_SEND(0X40);            //0x40表示后面开始写数据
+ 283   1      }
+*** WARNING C280 IN LINE 269 OF MAIN.C: 'i': unreferenced local variable
+ 284          
+ 285          
+ 286          void main()
+ 287          {
+ 288   1      uchar n;
+ 289   1      LCD_INIT();             //LCD初始化
+ 290   1      LCD_TEST1();    //连续写数据测试下
+ 291   1      LCD_SET_XY(60,4);       //设定从XY位置开始更新数据。
+ 292   1              for(n=100;n>0;n--)              //我还不会用字库，先在这个位置写几个黑点测试下。
+ 293   1              {
+ 294   2                      I2C_SOFT_SEND(0XFF);
+ 295   2              }
+ 296   1              
+ 297   1              
+ 298   1              while(1);
+ 299   1      }
+
+
+MODULE INFORMATION:   STATIC OVERLAYABLE
+C51 COMPILER V9.01   MAIN                                                                  09/20/2018 18:08:39 PAGE 6   
+
+   CODE SIZE        =    291    ----
+   CONSTANT SIZE    =   1791    ----
+   XDATA SIZE       =   ----    ----
+   PDATA SIZE       =   ----    ----
+   DATA SIZE        =   ----       5
+   IDATA SIZE       =   ----    ----
+   BIT SIZE         =   ----    ----
+END OF MODULE INFORMATION.
+
+
+C51 COMPILATION COMPLETE.  1 WARNING(S),  0 ERROR(S)

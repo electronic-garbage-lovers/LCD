@@ -1,0 +1,227 @@
+//----------------------------------------------------------------------
+/*EASTRISING TECHNOLOGY CO,.LTD.*/
+// Module    : ERC1602-4
+// Lanuage   : C51 Code
+// Create    : JAVEN
+// Date      : 2013-05-23
+// Drive IC  : ST7032
+// INTERFACE : 4 Wire SPI
+// MCU 		 : AT89C52
+// VDD		 : 3.3V
+//----------------------------------------------------------------------
+#include <reg51.h>
+#include <intrins.h>
+
+
+sbit SDA=P1^7;//serial data input
+sbit SCLK=P1^6;//serial clock
+sbit RST=P3^5;//eset
+sbit RS=P3^4;//Data/command
+sbit CS1=P3^3;//Chip select
+
+unsigned char code font[]=
+{
+"*EastRisingTech*"
+"BUY-DISPLAY.COM"
+};
+
+
+/*******************************************************************************
+* Function Name  : Delay
+* Description    : Delay n * 2us.
+* Input          : n
+* Output         : None
+* Return         : None
+*******************************************************************************/
+void Delay(unsigned int n)
+{    
+   
+	while(n--);
+
+	return;
+}
+
+
+
+/*******************************************************************************
+* Function Name  : Write_Instruction
+* Description    : Write Instruction
+* Input          : cmd
+* Output         : None
+* Return         : None
+*******************************************************************************/
+
+void Write_Instruction(unsigned char cmd)
+{
+  unsigned int j;
+     CS1=0;
+     RS=0;
+  for(j=0;j<8;j++)
+    {
+	if (cmd&0x80)
+    SDA=1;
+    else
+    SDA=0; 
+    SCLK=0;
+    cmd=cmd<<1;
+    SCLK=1;      
+     }
+  CS1=1;
+}
+
+
+/*******************************************************************************
+* Function Name  : Write_Data
+* Description    : Write Data
+* Input          : dat
+* Output         : None
+* Return         : None
+*******************************************************************************/
+void Write_Data(unsigned char  dat)
+{
+  unsigned int j;
+     CS1=0;
+     RS=1;
+  for(j=0;j<8;j++)
+    {
+	if (dat&0x80)
+    SDA=1;
+    else
+    SDA=0; 
+    SCLK=0;
+    dat=dat<<1;
+    SCLK=1;      
+     }
+  CS1=1;
+}
+
+
+
+/*******************************************************************************
+* Function Name  : Initial
+* Description    : LCM initializing 
+* Input          : None
+* Output         : None
+* Return         : None
+*******************************************************************************/
+void Initial(void)
+{	
+	RST=1;
+	Delay(200);
+	RST=0;
+	Delay(200);
+	RST=1;
+	Delay(4000);
+
+	
+	Write_Instruction(0x38);   //FUNCTION SET 8 bit,N=1 2-line display mode,5*7dot	
+	Delay(30);	
+	Write_Instruction(0x39);  //FUNCTION SET 8 bit,N=1 2-line display mode,5*7dot IS=1
+	Delay(30);	
+	Write_Instruction(0x1c);   //Internal OSC frequency adjustment 183HZ    bias will be 1/4 
+	Delay(30);	
+	Write_Instruction(0x73);    //Contrast control  low byte
+	Delay(30);	
+	Write_Instruction(0x57);    //booster circuit is turn on.    /ICON display off. /Contrast control   high byte
+	Delay(30);	
+	Write_Instruction(0x6c);  //Follower control
+	Delay(5000);	
+	Write_Instruction(0x0c);    //DISPLAY ON
+	Delay(30);	
+	Write_Instruction(0x01);   //CLEAR DISPLAY
+	Delay(2000);	
+	Write_Instruction(0x06);   //ENTRY MODE SET  CURSOR MOVES TO RIGHT
+	Delay(30);	 
+
+}
+
+/*******************************************************************************
+* Function Name  : Display
+* Description    : Display one character
+* Input          : dat,add,Nline
+* Output         : None
+* Return         : None
+*******************************************************************************/
+void Display(unsigned char dat,unsigned char add,unsigned char Nline)
+{
+	if(Nline==1)
+    add=0x80+add;
+    if(Nline==2)
+    add=0xc0+add;
+
+	Write_Instruction(add);
+	Delay(30);	
+	Write_Data(dat);
+    return;
+}
+
+
+/*******************************************************************************
+* Function Name  : shaw_character_string
+* Description    : Display String
+* Input          : a[]
+* Output         : None
+* Return         : None
+*******************************************************************************/
+void shaw_character_string(unsigned char a[])
+{unsigned char  m;
+
+
+	Write_Instruction(0x80);  //1 LINE ADDRESS
+	Delay(30);	
+ 	for(m=0;m<16;m++)
+	{	
+	Write_Data(a[m]);
+	}
+
+	
+	Write_Instruction(0xC0);  //2 LINE ADDRESS
+	Delay(30);	
+ 	for(m=16;m<32;m++)
+	{	Write_Data(a[m]);
+	}
+		Delay(65000);
+		Delay(65000);
+
+}
+
+/*******************************************************************************
+* Function Name  : main
+* Description    : main function
+* Input          : None
+* Output         : None
+* Return         : None
+*******************************************************************************/
+
+main()
+{     unsigned char i,j=0x08;
+
+	P1=0XFF;P3=0XFF;
+    Initial();
+
+	shaw_character_string(font);
+    while(1)
+	{
+
+	Write_Instruction(0x80);  //1 LINE ADDRESS
+	Delay(30);	
+
+    for(i=0;i<0x16;i++)    //Display 80 character        
+	{
+	Write_Data(j);
+    }
+
+	Write_Instruction(0xC0);  //2 LINE ADDRESS
+	Delay(30);       
+    for(i=0;i<0x16;i++)    //Display 80 character        
+	{
+	Write_Data(j);
+    }
+
+    j++;
+    if(j==0xff)j=0x08;
+	Delay(60000);
+	Delay(60000);
+
+    }
+}

@@ -1,0 +1,20 @@
+Added Component: Designator=C1(C0805)
+Added Component: Designator=JLX12864(PCBComponent_1)
+Added Component: Designator=P1(HDR1X7)
+Added Pin To Net: NetName=GND Pin=P1-7
+Added Pin To Net: NetName=CD Pin=P1-3
+Added Net: Name=CD
+Added Pin To Net: NetName=CS0 Pin=P1-1
+Added Net: Name=CS0
+Added Pin To Net: NetName=RST Pin=P1-2
+Added Net: Name=RST
+Added Pin To Net: NetName=SCK Pin=P1-4
+Added Net: Name=SCK
+Added Pin To Net: NetName=SDA Pin=P1-5
+Added Net: Name=SDA
+Added Pin To Net: NetName=VCC Pin=P1-6
+Added Net: Name=VCC
+Added Member To Class: ClassName=Sheet1 Member=Component C1 Cap Pol3
+Added Member To Class: ClassName=Sheet1 Member=Component JLX12864 Component_1
+Added Member To Class: ClassName=Sheet1 Member=Component P1 Altium Limited
+Added Room: Name=Sheet1
